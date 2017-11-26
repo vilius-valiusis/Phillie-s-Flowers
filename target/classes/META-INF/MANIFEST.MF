@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: final-project-1
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: admin
+Implementation-Vendor-Id: com.cit
+Build-Jdk: 1.8.0_121
+Implementation-URL: http://projects.spring.io/spring-boot/final-projec
+ t-1/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
