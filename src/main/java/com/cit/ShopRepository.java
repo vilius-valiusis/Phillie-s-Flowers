@@ -1,9 +1,14 @@
 package com.cit;
 
+import java.util.List;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ShopRepository extends MongoRepository<Shop, String>{
-
+	
+	List<Shop> findAll();
+	
+	
 }
