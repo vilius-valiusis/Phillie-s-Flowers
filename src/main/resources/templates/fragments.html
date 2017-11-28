@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+	<div th:fragment="menu">
+		<!-- Here I am using thymeleaf to set paths -->
+		<ul>
+			<li><a th:href="@{/}">home</a></li>
+			<li><a th:href="@{/about}">about us</a></li>
+			<li><a th:href="@{/specials}">gift packages</a></li>
+			<li><a th:href="@{/contact}">contact</a></li>
+		</ul>
+	</div>
+
+	<div th:fragment="footer">
+		<div class="left_footer">
+			<img src="images/footer_logo.gif" alt="" /><br /> <a
+				href="http://csscreme.com"><img src="images/csscreme.gif" alt=""
+				border="0" /></a>
+		</div>
+		<div class="right_footer">
+			<a href="/">home</a> <a href="about.html">about us</a> <a
+				href="special.html">gift packages</a> <a href="contact.html">contact
+				us</a>
+		</div>
+	</div>
+
+
+	<div class="feat_prod_box" th:fragment="product">
+		<div class="prod_img">
+			<a href="#"><img src="images/prod2.gif" alt="" border="0" /></a>
+		</div>
+		<div class="prod_det_box">
+			<div class="box_top"></div>
+			<div class="box_center">
+				<div class="prod_title" th:text="${product.name}">Christmas
+					Package</div>
+				<p class="details">
+					Item1: <span th:text="${product.item1}"></span>.
+				</p>
+				<p class="details">
+					Item2: <span th:text="${product.item2}"></span>.
+				</p>
+				<p class="details">
+					Item3: <span th:text="${product.item3}"></span>.
+				</p>
+				<p class="details">
+					Price: <span th:text="${product.price}"></span>.
+				</p>
+				
+				<div class="clear"></div>
+			</div>
+			
+			<div class="box_bottom">
+			
+			</div>
+			<form th:object="${product}" th:action="@{/}" method="post">
+			<input type="submit" value = "submit"/>
+			</form>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+
+	
+
+</body>
+
+</html>
