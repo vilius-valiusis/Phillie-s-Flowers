@@ -23,27 +23,13 @@
             <td>Qty</td>
             <td>Total</td>
           </tr>
-          <tr>
-            <td><a href="#"><img src="images/cart_thumb.gif" alt="" border="0" class="cart_thumb" /></a></td>
-            <td>Gift flowers</td>
-            <td th:inline="text"> </td>
-            <td th:inline="text"></td>
-            <td th:inline="text"></td>
-          </tr>
-          <tr>
-            <td><a href="#"><img src="images/cart_thumb.gif" alt="" border="0" class="cart_thumb" /></a></td>
-            <td>Gift flowers</td>
-            <td th:inline="text"> </td>
-            <td th:inline="text"></td>
-            <td th:inline="text"></td>
-          </tr>
-          <tr>
-            <td><a href="#"><img src="images/cart_thumb.gif" alt="" border="0" class="cart_thumb" /></a></td>
-            <td>Gift flowers</td>
-            <td th:inline="text"> </td>
-            <td th:inline="text"></td>
-            <td th:inline="text"></td>
-          </tr>
+          
+          
+          <!-- Loop through itmes in the cart and display -->
+          <div th:each="product : ${cartList}">
+          <div th:include="fragments :: cartItems"></div>
+          </div>
+     
           <tr>
             <td colspan="4" class="cart_total"><span class="red">TOTAL SHIPPING:</span></td>
             <td> 250$</td>
@@ -61,7 +47,7 @@
     
       <div class="cart">
         <div class="title"><span class="title_icon"><img src="images/cart.gif" alt="" /></span>My cart</div>
-        <div class="home_cart_content"> 3 x items | <span class="red">TOTAL: 100$</span> </div>
+        <div class="home_cart_content" th:text="${cartCount}"> empty <span class="red">TOTAL: 100$</span> </div>
         <a th:href="@{/cart}" class="view_cart">view cart</a> </div>
       <div class="title"><span class="title_icon"><img src="images/bullet3.gif" alt="" /></span>About Our Shop</div>
       <div class="about">

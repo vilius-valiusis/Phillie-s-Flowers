@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Products")
+@Document(collection = "Product")
 public class Product {
 
 	@Id
@@ -16,11 +16,12 @@ public class Product {
 	private String item3;
 	private Double price;
 	private int quantity;
-	//private String imageUrl;
+
+	// private String imageUrl;
 	public Product() {
+
 		
-		
-		
+
 	}
 
 	public Product(String name, String item1, String item2, String item3, Double price, int quantity) {
@@ -88,7 +89,5 @@ public class Product {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	
-	
 
 }
