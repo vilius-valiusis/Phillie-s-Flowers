@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cit.entity.Product;
+import com.cit.entity.Shop;
 import com.cit.repositories.ProductRepository;
 
 @Service
@@ -37,5 +38,18 @@ public class ProductService {
 	public Product getByName(String name) {
 		return productRepository.getByName(name);
 	}
+	
+	/*public void update(ArrayList<Product> cartList) {
+
+		List<Product> productList = productRepository.findAll();
+		for (Product p : productList) {
+
+			productRepository.fin
+		}
+
+		productRepository.save();
+	}*/
+	
+	
 
 }

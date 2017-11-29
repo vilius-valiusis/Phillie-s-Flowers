@@ -14,9 +14,11 @@
 
 	<div th:fragment="cartItems">
 		<tr>
-			<td><img src="images/cart_thumb.gif" alt="" border="0"
+			<td><img th:src="${product.imageUrl}" alt="" border="0"
 				class="cart_thumb" /></td>
 			<td th:text="${product.name}"></td>
+			<td th:text="${product.price}"></td>
+			<td th:text="${product.quantity}"></td>
 		</tr>
 	</div>
 
@@ -46,7 +48,7 @@
 
 	<div class="feat_prod_box" th:fragment="product">
 		<div class="prod_img">
-			<a href="#"><img src="images/prod2.gif" alt="" border="0" /></a>
+			<a href="#"><img th:src="${product.imageUrl}" alt="" border="0" /></a>
 		</div>
 		<div class="prod_det_box">
 			<div class="box_top"></div>

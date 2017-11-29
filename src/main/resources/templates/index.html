@@ -28,12 +28,14 @@
 				<!-- Here I have a fragment called product and I am looping through the product list 
 				retrieved from the database that is looping the fragment inserting each products details. -->
 				<div th:each="product : ${productList}">
-					<form class="feat_prod_box" th:object="${product}"
-						th:action="@{/}" method="post">
+					<form class="feat_prod_box" th:object="${product}" th:action="@{/cart/add}"
+						method="post">
 						<div th:include="fragments :: product"></div>
 						<input type="hidden" th:name="name" th:value="${product.name}"></input>
 						<input type="hidden" th:name="price" th:value="${product.price}"></input>
-						<input type="submit" value="add to cart"></input>
+						<input type="hidden" th:name="imageUrl"
+							th:value="${product.imageUrl}"></input> <input type="submit"
+							value="add to cart"></input>
 					</form>
 				</div>
 
@@ -61,7 +63,12 @@
 					<p>
 						<img src="images/about.gif" alt="" class="right" /> Philomena
 						Hartigan inherited this flower shop from her father. It was
-						established in 1965.
+						established in 1965. Philomena Hartigan inherited this flower shop
+						from her father. It was established in 1965 Philomena Hartigan
+						inherited this flower shop from her father. It was established in
+						1965 Philomena Hartigan inherited this flower shop from her
+						father. It was established in 1965. Philomena Hartigan inherited
+						this flower shop from her father. It was established in 1965
 					</p>
 				</div>
 

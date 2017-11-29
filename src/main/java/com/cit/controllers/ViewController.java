@@ -6,7 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,9 +17,10 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.cit.entity.Product;
 import com.cit.services.CartService;
 import com.cit.services.ProductService;
+import com.cit.services.ShopService;
 
 @Controller
-
+@SessionAttributes("cartCount")
 public class ViewController {
 
 	int count = 0;
@@ -29,58 +31,60 @@ public class ViewController {
 	@Autowired
 	private CartService cartService;
 
-	public ViewController(ProductService productServiceImpl, CartService cartService) {
+	@Autowired
+	private ShopService shopService;
+
+	public ViewController(ProductService productServiceImpl, CartService cartService, ShopService shopService) {
 		this.productServiceImpl = productServiceImpl;
 		this.cartService = cartService;
+		this.shopService = shopService;
 	};
 
-	@PostMapping("/")
-	public String addProduct(Product product, Model model) {
-
-		count++;
-		cartService.addProduct(product);
-		//System.out.println(product.getName());
-
-		return index(model);
-	}
-
+	
+	
 	@RequestMapping("/")
-	public String index(Model model) {
+	public String index(ModelMap model) {
 
-		//List<Product> productList = productServiceImpl.findAll();
-		// List<Product> cartList = cartService.findAll();
 		model.addAttribute("productList", productServiceImpl.findAll());
 		model.addAttribute("product", new Product());
-		model.addAttribute("cartCount", count + "");
+		model.addAttribute("cartCount", cartService.getCartCount());
 
 		return "index";
 	}
 
+	
 	@RequestMapping("/about")
-	public String about(Model model) {
-		model.addAttribute("cartCount", count + "");
+	public String about(ModelMap model) {
+		
 		return "about";
 	}
 
 	@RequestMapping("/specials")
-	public String specials(Model model) {
-		model.addAttribute("cartCount", count + "");
+	public String specials(ModelMap model) {
+		
 		return "specials";
 	}
 
 	@RequestMapping("/contact")
-	public String contact(Model model) {
-		model.addAttribute("cartCount", count + "");
+	public String contact(ModelMap model) {
+		
 		return "contact";
 	}
 
 	@RequestMapping("/cart")
-	public String cart(Model model) {
+	public String cart(ModelMap model) {
 
-		model.addAttribute("cartCount", count + "");
+		
 		model.addAttribute("cartList", cartService.getCartList());
 
 		return "cart";
+	}
+	
+	@RequestMapping("/cart/confirm")
+	public String cartConfirm(ModelMap model) {
+		
+		//model.addAttribute("cartCount", cartService.getCartCount());
+		return "checkConfirm";
 	}
 
 }

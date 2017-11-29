@@ -9,5 +9,10 @@ import com.cit.entity.Shop;
 @Repository
 public interface ShopRepository extends MongoRepository<Shop, String> {
 
-	List<Shop> getById(String id);
+	Shop getById(String id);
+
+	Shop getByName(String name);
+	
+	
+	 
 }

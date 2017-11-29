@@ -33,10 +33,10 @@ public class DbSeeder implements CommandLineRunner {
 		Shop phillies = new Shop("Phillies", 0, 0, "");
 		ArrayList<Product> products = new ArrayList<Product>();
 		
-		Product p1 = new Product("valentines", "roses", "luxury chocolates", "heart teddy", 50.00, 5);
-		Product p2 = new Product("easter", "daffodils", "easter egg", "chick teddy", 45.00, 10);
-		Product p3 = new Product("xmas", "tulips", "pudding", "stocking", 65.00, 3);
-		Product p4 = new Product("birthday", "venus flytrap", "cake", "voucher", 85.00, 22);
+		Product p1 = new Product("valentines", "roses", "luxury chocolates", "heart teddy", 50.00, 5, "images/prod1.gif");
+		Product p2 = new Product("easter", "daffodils", "easter egg", "chick teddy", 45.00, 10, "images/prod2.gif");
+		Product p3 = new Product("xmas", "tulips", "pudding", "stocking", 65.00, 3, "images/prod3.gif");
+		Product p4 = new Product("birthday", "venus flytrap", "cake", "voucher", 85.00, 22, "images/prod4.gif");
 		products.add(p1);
 		products.add(p2);
 		products.add(p3);
