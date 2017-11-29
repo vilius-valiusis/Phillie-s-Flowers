@@ -1,4 +1,4 @@
-package ie.cit.dcom4b.mv.philliesflowers.Repositories;
+package ie.cit.dcom4b.mv.philliesflowers.repositories;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import ie.cit.dcom4b.mv.philliesflowers.models.Product;

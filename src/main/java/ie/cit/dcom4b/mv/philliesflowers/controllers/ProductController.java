@@ -1,4 +1,4 @@
-package ie.cit.dcom4b.mv.philliesflowers.Controllers;
+package ie.cit.dcom4b.mv.philliesflowers.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import ie.cit.dcom4b.mv.philliesflowers.Repositories.ProductRepository;
 import ie.cit.dcom4b.mv.philliesflowers.models.Product;
+import ie.cit.dcom4b.mv.philliesflowers.repositories.ProductRepository;
 
 public class ProductController {
 	@Autowired
