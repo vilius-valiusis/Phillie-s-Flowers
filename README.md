@@ -10,3 +10,4 @@ Flowers web-site backend that provides this information from the supplier as wel
 overview of how the shop is doing (just headline figures such as total number of orders, total
 revenue and best-selling packages).
 
+![Routing Table](https://github.com/vilius-valiusis/Phillie-s-Flowers/blob/API/Capture.JPG)
