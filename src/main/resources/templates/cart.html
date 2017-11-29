@@ -31,12 +31,12 @@
           </div>
      
           <tr>
-            <td colspan="4" class="cart_total"><span class="red">TOTAL SHIPPING:</span></td>
-            <td> 250$</td>
+            <td colspan="4" class="cart_total"><span class="red">FREE SHIPPING:</span></td>
+            <td>0</td>
           </tr>
           <tr>
             <td colspan="4" class="cart_total"><span class="red">TOTAL:</span></td>
-            <td th:inline="text"> </td>
+            $<td th:inline="text" th:text="${cartTotal}"> </td>
           </tr>
         </table>
         <a class="checkout" th:href="@{/cart/checkout}">checkout &gt;</a> </div>
@@ -47,7 +47,7 @@
     
       <div class="cart">
         <div class="title"><span class="title_icon"><img src="images/cart.gif" alt="" /></span>My cart</div>
-        <div class="home_cart_content" th:text="${cartCount}"> empty <span class="red">TOTAL: 100$</span> </div>
+        <div class="home_cart_content" th:text="${cartCount}"> empty <span class="red" th:text="${cartTotal}">TOTAL: 100$</span> </div>
         <a th:href="@{/cart}" class="view_cart">view cart</a> </div>
       <div class="title"><span class="title_icon"><img src="images/bullet3.gif" alt="" /></span>About Our Shop</div>
       <div class="about">

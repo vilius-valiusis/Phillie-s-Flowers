@@ -1,12 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Flower Shop</title>
+<title>Flower Shop - Home</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="..static/css/style.css"
 	th:href="@{/css/style.css}" />
-
 </head>
 <body>
 	<div id="wrap">
@@ -14,7 +13,6 @@
 			<div class="logo">
 				<a href="#"><img src="images/logo.gif" alt="" border="0" /></a>
 			</div>
-
 			<!-- include menu fragment -->
 			<div id="menu" th:include="fragments :: menu"></div>
 		</div>
@@ -22,36 +20,25 @@
 			<div class="left_content">
 				<div class="title">
 					<span class="title_icon"><img src="images/bullet1.gif"
-						alt="" /></span>Gift Packages
+						alt="" /></span>Special gifts
 				</div>
-
-				<!-- Here I have a fragment called product and I am looping through the product list 
-				retrieved from the database that is looping the fragment inserting each products details. -->
-				<div th:each="product : ${productList}">
-					<form class="feat_prod_box" th:object="${product}" th:action="@{/cart/add}"
-						method="post">
-						<div th:include="fragments :: product"></div>
-						<input type="hidden" th:name="name" th:value="${product.name}"></input>
-						<input type="hidden" th:name="price" th:value="${product.price}"></input>
-						<input type="hidden" th:name="imageUrl"
-							th:value="${product.imageUrl}"></input> <input type="submit"
-							value="add to cart"></input>
-					</form>
+				<div class="feat_prod_box" th:each="product : ${productList}">
+					<div th:include="fragments :: specials"></div>
 				</div>
 
 				<div class="clear"></div>
 			</div>
-			<!--end of left content-->
+			<!-- end of left content -->
 			<div class="right_content">
-
-
 				<div class="cart">
 					<div class="title">
 						<span class="title_icon"><img src="images/cart.gif" alt="" /></span>My
 						cart
 					</div>
-					<div class="home_cart_content" th:text="${cartCount}">
-						empty<span class="red">TOTAL: 100$</span>
+					<div class="home_cart_content">
+						<span>Items: </span> <span th:text="${cartCount}"></span><span>
+							| </span><span class="red">Total: </span><span class="red"
+							th:text="${cartTotal}"></span><span class="red">$</span>
 					</div>
 					<a th:href="@{/cart}" class="view_cart">view cart</a>
 				</div>
@@ -61,23 +48,18 @@
 				</div>
 				<div class="about">
 					<p>
-						<img src="images/about.gif" alt="" class="right" /> Philomena
-						Hartigan inherited this flower shop from her father. It was
-						established in 1965. Philomena Hartigan inherited this flower shop
-						from her father. It was established in 1965 Philomena Hartigan
-						inherited this flower shop from her father. It was established in
-						1965 Philomena Hartigan inherited this flower shop from her
-						father. It was established in 1965. Philomena Hartigan inherited
-						this flower shop from her father. It was established in 1965
+						<img src="images/about.gif" alt="" class="right" /> Lorem ipsum
+						dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+						minim veniam, quis nostrud.
 					</p>
 				</div>
 
-
 			</div>
-			<!--end of right content-->
+			<!-- end of right content -->
 			<div class="clear"></div>
 		</div>
-		<!--end of center content-->
+		<!-- end of center content -->
 		<div class="footer" th:include="fragments :: footer"></div>
 	</div>
 </body>

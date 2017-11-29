@@ -35,8 +35,7 @@
 	<div th:fragment="footer">
 		<div class="left_footer">
 			<img src="images/footer_logo.gif" alt="" /><br /> <a
-				href="http://csscreme.com"><img src="images/csscreme.gif" alt=""
-				border="0" /></a>
+				href="http://csscreme.com"> </a>
 		</div>
 		<div class="right_footer">
 			<a href="/">home</a> <a href="about.html">about us</a> <a
@@ -48,7 +47,7 @@
 
 	<div class="feat_prod_box" th:fragment="product">
 		<div class="prod_img">
-			<a href="#"><img th:src="${product.imageUrl}" alt="" border="0" /></a>
+			<a><img th:src="${product.imageUrl}" alt="" border="0" /></a>
 		</div>
 		<div class="prod_det_box">
 			<div class="box_top"></div>
@@ -71,6 +70,33 @@
 				<div class="clear"></div>
 			</div>
 
+			<div class="box_bottom"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+
+
+
+
+	<div class="feat_prod_box" th:fragment="specials">
+		<div class="prod_img">
+			<a th:href="@{/specials}"><img th:src="${product.imageUrl}"
+				alt="" border="0" /></a>
+		</div>
+		<div class="prod_det_box">
+			<span class="special_icon"><img src="images/special_icon.gif"
+				alt="" /></span>
+			<div class="box_top"></div>
+			<div class="box_center">
+				<div class="prod_title" th:text="${product.name}">Product name</div>
+				<p class="details">Lorem ipsum dolor sit amet, consectetur
+					adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+					dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+					exercitation.</p>
+				<a th:href="@{/specials}" class="more">- buy now -</a>
+				<div class="clear"></div>
+			</div>
 			<div class="box_bottom"></div>
 		</div>
 		<div class="clear"></div>

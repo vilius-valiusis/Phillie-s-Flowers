@@ -1,14 +1,9 @@
 package com.cit.services;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.cit.entity.Product;
 import com.cit.entity.Shop;
-import com.cit.repositories.ProductRepository;
 import com.cit.repositories.ShopRepository;
 
 @Service
@@ -16,13 +11,9 @@ public class ShopService {
 
 	@Autowired
 	private ShopRepository shopRepository;
-	
-	@Autowired
-	private ProductRepository productRepository;
 
-	public ShopService(ShopRepository shopRepository, ProductRepository productRepository) {
+	public ShopService(ShopRepository shopRepository) {
 		this.shopRepository = shopRepository;
-		this.productRepository = productRepository;
 	}
 
 	public List<Shop> findAll() {
@@ -32,18 +23,25 @@ public class ShopService {
 		return shopList;
 	}
 
-	public Shop getById(String id) {
-		return shopRepository.getById(id);
-	}
 
-	//Here I am updating the Total Orders in the shop
-	public void update() {
+	// Here I am updating the Total Orders in the shop
+	public void updateTotalOrders() {
 
 		Shop s = shopRepository.getByName("Phillies");
-		
+
 		s.setTotalOrder(s.getTotalOrder() + 1);
-		
-		
+
+		shopRepository.save(s);
+
+	}
+
+	// Here I am updating the Total Revenue in the shop
+	public void updateTotalRevenue(Double amount) {
+
+		Shop s = shopRepository.getByName("Phillies");
+
+		s.setTotalRevenue(s.getTotalRevenue() + amount);
+
 		shopRepository.save(s);
 
 	}

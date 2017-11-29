@@ -3,7 +3,7 @@ package com.cit.utility;
 
 
 
-import java.math.BigDecimal;
+
 import java.util.ArrayList;
 
 
@@ -30,13 +30,13 @@ public class DbSeeder implements CommandLineRunner {
 	@Override
 	public void run(String... strings) throws Exception {
 		
-		Shop phillies = new Shop("Phillies", 0, 0, "");
+		Shop phillies = new Shop("Phillies", 0, 0.0, "");
 		ArrayList<Product> products = new ArrayList<Product>();
 		
-		Product p1 = new Product("valentines", "roses", "luxury chocolates", "heart teddy", 50.00, 5, "images/prod1.gif");
-		Product p2 = new Product("easter", "daffodils", "easter egg", "chick teddy", 45.00, 10, "images/prod2.gif");
-		Product p3 = new Product("xmas", "tulips", "pudding", "stocking", 65.00, 3, "images/prod3.gif");
-		Product p4 = new Product("birthday", "venus flytrap", "cake", "voucher", 85.00, 22, "images/prod4.gif");
+		Product p1 = new Product("Valentines Package", "roses", "luxury chocolates", "heart teddy", 50.00, 5, "images/prod1.gif");
+		Product p2 = new Product("Easter Package", "daffodils", "easter egg", "chick teddy", 45.00, 10, "images/prod2.gif");
+		Product p3 = new Product("Christmas Package", "tulips", "pudding", "stocking", 65.00, 3, "images/prod3.gif");
+		Product p4 = new Product("Birthday Package", "venus flytrap", "cake", "voucher", 85.00, 22, "images/prod4.gif");
 		products.add(p1);
 		products.add(p2);
 		products.add(p3);

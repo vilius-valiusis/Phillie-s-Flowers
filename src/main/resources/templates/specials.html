@@ -1,137 +1,86 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Flower Shop - Specials</title>
+<title>Flower Shop</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="..static/css/style.css" th:href="@{/css/style.css}"/>
+<link rel="stylesheet" type="text/css" href="..static/css/style.css"
+	th:href="@{/css/style.css}" />
+
 </head>
 <body>
-<div id="wrap">
-  <div class="header">
-    <div class="logo"><a href="#"><img src="images/logo.gif" alt="" border="0" /></a></div>
-    <!-- include menu fragment -->
-    <div id="menu" th:include="fragments :: menu"></div>
-  </div>
-  <div class="center_content">
-    <div class="left_content">
-      <div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" /></span>Special gifts</div>
-      <div class="feat_prod_box">
-        <div class="prod_img"><a href="#"><img src="images/prod1.gif" alt="" border="0" /></a></div>
-        <div class="prod_det_box"> <span class="special_icon"><img src="images/special_icon.gif" alt="" /></span>
-          <div class="box_top"></div>
-          <div class="box_center">
-            <div class="prod_title">Product name</div>
-            <p class="details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-            <a href="#" class="more">- more details -</a>
-            <div class="clear"></div>
-          </div>
-          <div class="box_bottom"></div>
-        </div>
-        <div class="clear"></div>
-      </div>
-      <div class="feat_prod_box">
-        <div class="prod_img"><a href="#"><img src="images/prod2.gif" alt="" border="0" /></a></div>
-        <div class="prod_det_box"> <span class="special_icon"><img src="images/special_icon.gif" alt="" /></span>
-          <div class="box_top"></div>
-          <div class="box_center">
-            <div class="prod_title">Product name</div>
-            <p class="details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-            <a href="#" class="more">- more details -</a>
-            <div class="clear"></div>
-          </div>
-          <div class="box_bottom"></div>
-        </div>
-        <div class="clear"></div>
-      </div>
-      <div class="feat_prod_box">
-        <div class="prod_img"><a href="#"><img src="images/prod1.gif" alt="" border="0" /></a></div>
-        <div class="prod_det_box"> <span class="special_icon"><img src="images/special_icon.gif" alt="" /></span>
-          <div class="box_top"></div>
-          <div class="box_center">
-            <div class="prod_title">Product name</div>
-            <p class="details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-            <a href="#" class="more">- more details -</a>
-            <div class="clear"></div>
-          </div>
-          <div class="box_bottom"></div>
-        </div>
-        <div class="clear"></div>
-      </div>
-      <div class="feat_prod_box">
-        <div class="prod_img"><a href="#"><img src="images/prod2.gif" alt="" border="0" /></a></div>
-        <div class="prod_det_box"> <span class="special_icon"><img src="images/special_icon.gif" alt="" /></span>
-          <div class="box_top"></div>
-          <div class="box_center">
-            <div class="prod_title">Product name</div>
-            <p class="details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-            <a href="#" class="more">- more details -</a>
-            <div class="clear"></div>
-          </div>
-          <div class="box_bottom"></div>
-        </div>
-        <div class="clear"></div>
-      </div>
-      <div class="pagination"> <span class="disabled"></span><span class="current">1</span><a href="#">2</a><a href="#">3</a>…<a href="#">10</a><a href="#">11</a><a href="#">>></a> </div>
-      <div class="clear"></div>
-    </div>
-    <!--end of left content-->
-    <div class="right_content">
-      <div class="languages_box"> <span class="red">Languages:</span> <a href="#"><img src="images/gb.gif" alt="" border="0" /></a> <a href="#"><img src="images/fr.gif" alt="" border="0" /></a> <a href="#"><img src="images/de.gif" alt="" border="0" /></a> </div>
-      <div class="currency"> <span class="red">Currency: </span> <a href="#">GBP</a> <a href="#">EUR</a> <a href="#"><strong>USD</strong></a> </div>
-      <div class="cart">
-        <div class="title"><span class="title_icon"><img src="images/cart.gif" alt="" /></span>My cart</div>
-        <div class="home_cart_content"> 3 x items | <span class="red">TOTAL: 100$</span> </div>
-        <a th:href="@{/cart}" class="view_cart">view cart</a> </div>
-      <div class="title"><span class="title_icon"><img src="images/bullet3.gif" alt="" /></span>About Our Shop</div>
-      <div class="about">
-        <p> <img src="images/about.gif" alt="" class="right" /> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. </p>
-      </div>
-      <div class="right_box">
-        <div class="title"><span class="title_icon"><img src="images/bullet4.gif" alt="" /></span>Promotions</div>
-        <div class="new_prod_box"> <a href="#">product name</a>
-          <div class="new_prod_bg"> <span class="new_icon"><img src="images/promo_icon.gif" alt="" /></span> <a href="#"><img src="images/thumb1.gif" alt="" class="thumb" border="0" /></a> </div>
-        </div>
-        <div class="new_prod_box"> <a href="#">product name</a>
-          <div class="new_prod_bg"> <span class="new_icon"><img src="images/promo_icon.gif" alt="" /></span> <a href="#"><img src="images/thumb2.gif" alt="" class="thumb" border="0" /></a> </div>
-        </div>
-        <div class="new_prod_box"> <a href="#">product name</a>
-          <div class="new_prod_bg"> <span class="new_icon"><img src="images/promo_icon.gif" alt="" /></span> <a href="#"><img src="images/thumb3.gif" alt="" class="thumb" border="0" /></a> </div>
-        </div>
-      </div>
-      <div class="right_box">
-        <div class="title"><span class="title_icon"><img src="images/bullet5.gif" alt="" /></span>Categories</div>
-        <ul class="list">
-          <li><a href="#">accesories</a></li>
-          <li><a href="#">flower gifts</a></li>
-          <li><a href="#">specials</a></li>
-          <li><a href="#">hollidays gifts</a></li>
-          <li><a href="#">accesories</a></li>
-          <li><a href="#">flower gifts</a></li>
-          <li><a href="#">specials</a></li>
-          <li><a href="#">hollidays gifts</a></li>
-          <li><a href="#">accesories</a></li>
-          <li><a href="#">flower gifts</a></li>
-          <li><a href="#">specials</a></li>
-        </ul>
-        <div class="title"><span class="title_icon"><img src="images/bullet6.gif" alt="" /></span>Partners</div>
-        <ul class="list">
-          <li><a href="#">accesories</a></li>
-          <li><a href="#">flower gifts</a></li>
-          <li><a href="#">specials</a></li>
-          <li><a href="#">hollidays gifts</a></li>
-          <li><a href="#">accesories</a></li>
-          <li><a href="#">flower gifts</a></li>
-          <li><a href="#">specials</a></li>
-          <li><a href="#">hollidays gifts</a></li>
-          <li><a href="#">accesories</a></li>
-        </ul>
-      </div>
-    </div>
-    <!--end of right content-->
-    <div class="clear"></div>
-  </div>
-  <!--end of center content-->
-  <div class="footer" th:include="fragments :: footer"></div>
-</div>
+	<div id="wrap">
+		<div class="header">
+			<div class="logo">
+				<a href="#"><img src="images/logo.gif" alt="" border="0" /></a>
+			</div>
+
+			<!-- include menu fragment -->
+			<div id="menu" th:include="fragments :: menu"></div>
+		</div>
+		<div class="center_content">
+			<div class="left_content">
+				<div class="title">
+					<span class="title_icon"><img src="images/bullet1.gif"
+						alt="" /></span>Gift Packages
+				</div>
+
+				<!-- Here I have a fragment called product and I am looping through the product list 
+				retrieved from the database that is looping the fragment inserting each products details. -->
+				<div th:each="product : ${productList}">
+					<form class="feat_prod_box" th:object="${product}" th:action="@{/cart/add}"
+						method="post">
+						<div th:include="fragments :: product"></div>
+						<input type="hidden" th:name="name" th:value="${product.name}"></input>
+						<input type="hidden" th:name="price" th:value="${product.price}"></input>
+						<input type="hidden" th:name="imageUrl"
+							th:value="${product.imageUrl}"></input> <input type="submit"
+							value="add to cart"></input>
+					</form>
+				</div>
+
+				<div class="clear"></div>
+			</div>
+			<!--end of left content-->
+			<div class="right_content">
+
+
+				<div class="cart">
+					<div class="title">
+						<span class="title_icon"><img src="images/cart.gif" alt="" /></span>My
+						cart
+					</div>
+					<div class="home_cart_content">
+						<span>Items: </span> <span th:text="${cartCount}"></span><span>
+							| </span><span class="red">Total: </span><span class="red"
+							th:text="${cartTotal}"></span><span class="red">$</span>
+					</div>
+					<a th:href="@{/cart}" class="view_cart">view cart</a>
+				</div>
+				<div class="title">
+					<span class="title_icon"><img src="images/bullet3.gif"
+						alt="" /></span>About Our Shop
+				</div>
+				<div class="about">
+					<p>
+						<img src="images/about.gif" alt="" class="right" /> Philomena
+						Hartigan inherited this flower shop from her father. It was
+						established in 1965. Philomena Hartigan inherited this flower shop
+						from her father. It was established in 1965 Philomena Hartigan
+						inherited this flower shop from her father. It was established in
+						1965 Philomena Hartigan inherited this flower shop from her
+						father. It was established in 1965. Philomena Hartigan inherited
+						this flower shop from her father. It was established in 1965
+					</p>
+				</div>
+
+
+			</div>
+			<!--end of right content-->
+			<div class="clear"></div>
+		</div>
+		<!--end of center content-->
+		<div class="footer" th:include="fragments :: footer"></div>
+	</div>
 </body>
 </html>

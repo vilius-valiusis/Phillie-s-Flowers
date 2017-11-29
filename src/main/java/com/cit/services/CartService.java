@@ -13,10 +13,19 @@ import com.cit.repositories.ProductRepository;
 public class CartService {
 
 	int cartCount;
+	double cartTotal;
 	List<Product> cartList = new ArrayList<Product>();
 
 	public CartService() {
 
+	}
+
+	public double getCartTotal() {
+		return cartTotal;
+	}
+
+	public void setCartTotal(double cartTotal) {
+		this.cartTotal = cartTotal;
 	}
 
 	public int getCartCount() {
@@ -31,6 +40,12 @@ public class CartService {
 	public void resetCartCount() {
 
 		this.cartCount = 0;
+
+	}
+	
+	public void resetCartTotal() {
+
+		this.cartTotal = 0;
 
 	}
 
@@ -49,9 +64,15 @@ public class CartService {
 
 		return cartList;
 	}
-	
+
 	public void resetCartList() {
 
 		this.cartList = new ArrayList<Product>();
+	}
+	
+	public void addToCartTotal(Double amount) {
+		
+		cartTotal = cartTotal + amount;
+		
 	}
 }
