@@ -1,52 +1,18 @@
 package com.cit.services;
 
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import com.cit.entity.Shop;
-import com.cit.repositories.ShopRepository;
 
-@Service
-public class ShopService {
+import com.cit.entities.Shop;
 
-	@Autowired
-	private ShopRepository shopRepository;
+public interface ShopService {
 
-	public ShopService(ShopRepository shopRepository) {
-		this.shopRepository = shopRepository;
-	}
-
-	public List<Shop> findAll() {
-
-		List<Shop> shopList = shopRepository.findAll();
-
-		return shopList;
-	}
-
+	public List<Shop> findAll();
 
 	// Here I am updating the Total Orders in the shop
-	public void updateTotalOrders() {
-
-		Shop s = shopRepository.getByName("Phillies");
-
-		s.setTotalOrder(s.getTotalOrder() + 1);
-
-		shopRepository.save(s);
-
-	}
+	public void updateTotalOrders();
 
 	// Here I am updating the Total Revenue in the shop
-	public void updateTotalRevenue(Double amount) {
+	public void updateTotalRevenue(Double amount);
 
-		Shop s = shopRepository.getByName("Phillies");
-
-		s.setTotalRevenue(s.getTotalRevenue() + amount);
-
-		shopRepository.save(s);
-
-	}
-
-	public Shop getByName(String name) {
-		return shopRepository.getByName(name);
-	}
+	public Shop getByName(String name);
 }

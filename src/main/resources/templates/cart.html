@@ -1,65 +1,87 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Flower Shop - Cart</title>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
-<link rel="stylesheet" type="text/css" href="..static/css/style.css" th:href="@{/css/style.css}"/>
+<meta http-equiv="Content-Type"
+	content="text/html; charset=windows-1252" />
+<link rel="stylesheet" type="text/css" href="..static/css/style.css"
+	th:href="@{/css/style.css}" />
 </head>
 <body>
-<div id="wrap">
-  <div class="header">
-    <div class="logo"><a href="#"><img src="images/logo.gif" alt="" border="0" /></a></div>
-    <div id="menu" th:include="fragments :: menu"></div>
-  </div>
-  <div class="center_content">
-    <div class="left_content">
-      <div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" /></span>My cart</div>
-      <div class="feat_prod_box_details">
-        <table class="cart_table">
-          <tr class="cart_title">
-            <td>Item pic</td>
-            <td>Product name</td>
-            <td>Unit price</td>
-            <td>Qty</td>
-            <td>Total</td>
-          </tr>
-          
-          
-          <!-- Loop through itmes in the cart and display -->
-          <div th:each="product : ${cartList}">
-          <div th:include="fragments :: cartItems"></div>
-          </div>
-     
-          <tr>
-            <td colspan="4" class="cart_total"><span class="red">FREE SHIPPING:</span></td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td colspan="4" class="cart_total"><span class="red">TOTAL:</span></td>
-            $<td th:inline="text" th:text="${cartTotal}"> </td>
-          </tr>
-        </table>
-        <a class="checkout" th:href="@{/cart/checkout}">checkout &gt;</a> </div>
-      <div class="clear"></div>
-    </div>
-    <!--end of left content-->
-    <div class="right_content">
-    
-      <div class="cart">
-        <div class="title"><span class="title_icon"><img src="images/cart.gif" alt="" /></span>My cart</div>
-        <div class="home_cart_content" th:text="${cartCount}"> empty <span class="red" th:text="${cartTotal}">TOTAL: 100$</span> </div>
-        <a th:href="@{/cart}" class="view_cart">view cart</a> </div>
-      <div class="title"><span class="title_icon"><img src="images/bullet3.gif" alt="" /></span>About Our Shop</div>
-      <div class="about">
-        <p> <img src="images/about.gif" alt="" class="right" /> </p>
-      </div>
-	
-    </div>
-    <!--end of right content-->
-    <div class="clear"></div>
-  </div>
-  <!--end of center content-->
-  <div class="footer" th:include="fragments :: footer"></div>
-</div>
+	<div id="wrap">
+		<div class="header">
+			<div class="logo">
+				<a href="#"><img src="images/logo.gif" alt="" border="0" /></a>
+			</div>
+			<div id="menu" th:include="fragments :: menu"></div>
+		</div>
+		<div class="center_content">
+			<div class="left_content">
+				<div class="title">
+					<span class="title_icon"><img src="images/bullet1.gif"
+						alt="" /></span>My cart
+				</div>
+				<div class="feat_prod_box_details">
+					<table class="cart_table">
+						<tr class="cart_title">
+							<td>Item pic</td>
+							<td>Product name</td>
+							<td>Unit price</td>
+							<td></td>
+							<td>     </td>
+						</tr>
+
+
+						<!-- Loop through itmes in the cart and display -->
+						<div th:each="product : ${cartList}">
+							<div th:include="fragments :: cartItems"></div>
+						</div>
+
+						<tr>
+							<td colspan="4" class="cart_total"><span class="red">FREE
+									SHIPPING:</span></td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td colspan="4" class="cart_total"><span class="red">TOTAL:</span></td>
+							
+							<td th:inline="text" th:text="${cartTotal}"></td>
+						</tr>
+					</table>
+					<a class="checkout" th:href="@{/cart/checkout}">checkout &gt;</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<!--end of left content-->
+			<div class="right_content">
+
+				<div class="cart">
+					<div class="title">
+						<span class="title_icon"><img src="images/cart.gif" alt="" /></span>My
+						cart
+					</div>
+					<div class="home_cart_content" th:text="${cartCount}">
+						empty <span class="red" th:text="${cartTotal}">TOTAL: 100$</span>
+					</div>
+					<a th:href="@{/cart}" class="view_cart">view cart</a>
+				</div>
+				<div class="title">
+					<span class="title_icon"><img src="images/bullet3.gif"
+						alt="" /></span>About Our Shop
+				</div>
+				<div class="about">
+					<p>
+						<img src="images/about.gif" alt="" class="right" />
+					</p>
+				</div>
+
+			</div>
+			<!--end of right content-->
+			<div class="clear"></div>
+		</div>
+		<!--end of center content-->
+		<div class="footer" th:include="fragments :: footer"></div>
+	</div>
 </body>
 </html>

@@ -1,42 +1,41 @@
 package com.cit.controllers;
-
+/*This controller sets up all views, model attributes and main request mappings for webpage naviagtion*/
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import com.cit.entity.Product;
+import com.cit.entities.Product;
 import com.cit.services.CartService;
 import com.cit.services.ProductService;
-import com.cit.services.ShopService;
 
+//Similar to cart controller with more session attributes to keep persistency
 @Controller
 @SessionAttributes({ "cartCount", "cartTotal", "cartList", "productList" })
 public class ViewController {
 
-	int count = 0;
 
 	@Autowired
-	private ProductService productServiceImpl;
+	private ProductService productService;
 
 	@Autowired
 	private CartService cartService;
 
-	public ViewController(ProductService productServiceImpl, CartService cartService) {
-		this.productServiceImpl = productServiceImpl;
+	public ViewController(ProductService productService, CartService cartService) {
+		this.productService = productService;
 		this.cartService = cartService;
 
 	};
-
+ 
 	@RequestMapping("/")
 	public String index(ModelMap model) {
 
-		model.addAttribute("productList", productServiceImpl.findAll());
+		model.addAttribute("productList", productService.findAll());
 		model.addAttribute("product", new Product());
 		model.addAttribute("cartCount", cartService.getCartCount());
 		model.addAttribute("cartTotal", cartService.getCartTotal());
 		model.addAttribute("cartList", cartService.getCartList());
-		
+
 		return "index";
 	}
 
@@ -60,8 +59,6 @@ public class ViewController {
 
 	@RequestMapping("/cart")
 	public String cart(ModelMap model) {
-
-		//model.addAttribute("cartList", cartService.getCartList());
 
 		return "cart";
 	}

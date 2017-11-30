@@ -1,41 +1,60 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Flower Shop - Cart</title>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
-<link rel="stylesheet" type="text/css" href="..static/css/style.css" th:href="@{/css/style.css}"/>
+<meta http-equiv="Content-Type"
+	content="text/html; charset=windows-1252" />
+<link rel="stylesheet" type="text/css" href="..static/css/style.css"
+	th:href="@{/css/style.css}" />
 </head>
 <body>
-<div id="wrap">
-  <div class="header">
-    <div class="logo"><a href="#"><img src="images/logo.gif" alt="" border="0" /></a></div>
-    <div id="menu" th:include="fragments :: menu"></div>
-  </div>
-  <div class="center_content">
-    <div class="left_content">
-      <div class="title"><span class="title_icon"><img src="images/bullet1.gif" alt="" /></span>Thank You for Your Order!</div>
-      
-        
-      <div class="clear"></div>
-    </div>
-    <!--end of left content-->
-    <div class="right_content">
-    
-      <div class="cart">
-        <div class="title"><span class="title_icon"><img src="images/cart.gif" alt="" /></span>My cart</div>
-        <div class="home_cart_content" th:text="0"> empty <span class="red">TOTAL: 100$</span> </div>
-        <a th:href="@{/cart}" class="view_cart">view cart</a> </div>
-      <div class="title"><span class="title_icon"><img src="images/bullet3.gif" alt="" /></span>About Our Shop</div>
-      <div class="about">
-        <p> <img src="images/about.gif" alt="" class="right" /> </p>
-      </div>
-	
-    </div>
-    <!--end of right content-->
-    <div class="clear"></div>
-  </div>
-  <!--end of center content-->
-  <div class="footer" th:include="fragments :: footer"></div>
-</div>
+	<div id="wrap">
+		<div class="header">
+			<div class="logo">
+				<a href="#"><img src="images/logo.gif" alt="" border="0" /></a>
+			</div>
+			<div id="menu" th:include="fragments :: menu"></div>
+		</div>
+		<div class="center_content">
+			<div class="left_content">
+				<div class="title">
+					<span class="title_icon"><img src="images/bullet1.gif"
+						alt="" /></span>Thank You for Your Order!
+				</div>
+
+
+				<div class="clear"></div>
+			</div>
+			<!--end of left content-->
+			<div class="right_content">
+
+				<div class="cart">
+					<div class="title">
+						<span class="title_icon"><img src="images/cart.gif" alt="" /></span>My
+						cart
+					</div>
+					<div class="home_cart_content" th:text="0">
+						empty <span class="red">TOTAL: 100$</span>
+					</div>
+					<a th:href="@{/cart}" class="view_cart">view cart</a>
+				</div>
+				<div class="title">
+					<span class="title_icon"><img src="images/bullet3.gif"
+						alt="" /></span>About Our Shop
+				</div>
+				<div class="about">
+					<p>
+						<img src="images/about.gif" alt="" class="right" />
+					</p>
+				</div>
+
+			</div>
+			<!--end of right content-->
+			<div class="clear"></div>
+		</div>
+		<!--end of center content-->
+		<div class="footer" th:include="fragments :: footer"></div>
+	</div>
 </body>
 </html>

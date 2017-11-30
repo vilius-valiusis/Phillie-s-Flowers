@@ -1,78 +1,31 @@
 package com.cit.services;
-
-import java.util.ArrayList;
+//CartService Interface
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.cit.entities.Product;
 
-import com.cit.entity.Product;
-import com.cit.repositories.ProductRepository;
+public interface CartService {
 
-@Service
-public class CartService {
+	public double getCartTotal();
 
-	int cartCount;
-	double cartTotal;
-	List<Product> cartList = new ArrayList<Product>();
+	public void setCartTotal(double cartTotal);
 
-	public CartService() {
+	public int getCartCount();
 
-	}
+	public void addCartCount();
 
-	public double getCartTotal() {
-		return cartTotal;
-	}
+	public void resetCartCount();
 
-	public void setCartTotal(double cartTotal) {
-		this.cartTotal = cartTotal;
-	}
+	public void resetCartTotal();
 
-	public int getCartCount() {
-		return cartCount;
-	}
+	public List<Product> findAll();
 
-	public void addCartCount() {
+	public void addProduct(Product p);
 
-		this.cartCount = cartCount + 1;
-	}
+	public List<Product> getCartList();
 
-	public void resetCartCount() {
+	public void resetCartList();
 
-		this.cartCount = 0;
+	public void addToCartTotal(Double amount);
 
-	}
-	
-	public void resetCartTotal() {
-
-		this.cartTotal = 0;
-
-	}
-
-	public List<Product> findAll() {
-
-		return cartList;
-	}
-
-	public void addProduct(Product p) {
-
-		cartList.add(p);
-
-	}
-
-	public List<Product> getCartList() {
-
-		return cartList;
-	}
-
-	public void resetCartList() {
-
-		this.cartList = new ArrayList<Product>();
-	}
-	
-	public void addToCartTotal(Double amount) {
-		
-		cartTotal = cartTotal + amount;
-		
-	}
 }

@@ -1,5 +1,9 @@
 package com.cit.controllers;
 
+/*
+ The CartController handles all shopping cart activity making use of
+ CartService and ShopService to update the database. */
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -7,11 +11,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import com.cit.entity.Product;
+import com.cit.entities.Product;
 import com.cit.services.CartService;
-import com.cit.services.ProductService;
 import com.cit.services.ShopService;
 
+//Set Controller and Session Annotations. Sessions keeps cartCount on all pages.
 @Controller
 @SessionAttributes("cartCount")
 public class CartController {
@@ -27,19 +31,25 @@ public class CartController {
 		this.shopService = shopService;
 	};
 
-	@PostMapping("/cart/add")
+	/*Thymeleaf allows me to send object in post request without having to map it. I
+	 Then use cartService to make updates to the cart. I also used a redirect variable 
+	 that allows me retrun to previous page and update cartCount.*/
+	
+	@PostMapping("/cart/add")															
 	public String addProduct(Product product, ModelMap model, RedirectAttributes redir) {
 
 		cartService.addCartCount();
 		cartService.getCartCount();
 		cartService.addProduct(product);
-		System.out.println(product.getPrice());
 		cartService.addToCartTotal(product.getPrice());
-		redir.addFlashAttribute("cartCount", cartService.getCartCount());
+		redir.addFlashAttribute("cartCount", cartService.getCartCount());				
 
 		return "redirect:/";
 	}
 
+	/*Checkout is pretty much a signal to update cart and shop database so
+	I did not need a post request as no data was beings sent from html page.*/
+	
 	@GetMapping("/cart/checkout")
 	public String checkout(ModelMap model) {
 
@@ -48,7 +58,7 @@ public class CartController {
 		shopService.updateTotalRevenue(cartService.getCartTotal());
 		cartService.resetCartList();
 		cartService.resetCartTotal();
-		model.addAttribute("cartCount", cartService.getCartCount());
+		model.addAttribute("cartCount", cartService.getCartCount());					
 
 		return "checkConfirm";
 	}
