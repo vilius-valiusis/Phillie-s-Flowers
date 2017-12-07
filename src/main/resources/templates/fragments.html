@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="..static/css/style.css"
+	th:href="@{/css/style.css}" />
+</head>
+
+
+<body>
+
+	<div th:fragment="cartItems">
+		<tr>
+			<td><img th:src="${product.imageUrl}" alt="" border="0"
+				class="cart_thumb" /></td>
+			<td th:text="${product.name}"></td>
+			<td th:text="${product.price}"></td>
+			<td></td>
+		</tr>
+	</div>
+
+	<div th:fragment="menu">
+		<!-- Here I am using thymeleaf to set paths -->
+		<ul>
+			<li><a th:href="@{/}">HOME</a></li>
+			<li><a th:href="@{/about}">ABOUT</a></li>
+			<li><a th:href="@{/specials}">GIFT PACKAGES</a></li>
+			<li><a th:href="@{/contact}">CONTACT</a></li>
+			<div sec:authorize="isAnonymous()">
+				<li><a th:href="@{/login}">LOGIN</a></li>
+			</div>
+			<div sec:authorize="isAuthenticated()">
+				<li><a th:href="@{/dashboard}">DASHBOARD</a></li>
+			</div>
+		</ul>
+	</div>
+
+	<div th:fragment="footer">
+		<div class="left_footer">
+			<img src="images/footer_logo.gif" alt="" /><br /> <a
+				href="http://csscreme.com"> </a>
+		</div>
+		<div class="right_footer">
+			<a href="/">home</a> <a href="about.html">about us</a> <a
+				href="special.html">gift packages</a> <a href="contact.html">contact
+				us</a>
+		</div>
+	</div>
+
+
+	<div class="feat_prod_box" th:fragment="product">
+		<div class="prod_img">
+			<a><img th:src="${product.imageUrl}" alt="" border="0" /></a>
+		</div>
+		<div class="prod_det_box">
+			<div class="box_top"></div>
+			<div class="box_center">
+				<div class="prod_title" th:text="${product.name}">Christmas
+					Package</div>
+				<p class="details">
+					Item1: <span th:text="${product.item1}"></span>.
+				</p>
+				<p class="details">
+					Item2: <span th:text="${product.item2}"></span>.
+				</p>
+				<p class="details">
+					Item3: <span th:text="${product.item3}"></span>.
+				</p>
+				<p class="details">
+					Price: <span th:text="${product.price}"></span>.
+				</p>
+
+				<div class="clear"></div>
+			</div>
+
+			<div class="box_bottom"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+
+
+
+
+	<div class="feat_prod_box" th:fragment="specials">
+		<div class="prod_img">
+			<a th:href="@{/specials}"><img th:src="${product.imageUrl}"
+				alt="" border="0" /></a>
+		</div>
+		<div class="prod_det_box">
+			<span class="special_icon"><img src="images/special_icon.gif"
+				alt="" /></span>
+			<div class="box_top"></div>
+			<div class="box_center">
+				<div class="prod_title" th:text="${product.name}">Product name</div>
+				<p class="details">Lorem ipsum dolor sit amet, consectetur
+					adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+					dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+					exercitation.</p>
+				<a th:href="@{/specials}" class="more">- buy now -</a>
+				<div class="clear"></div>
+			</div>
+			<div class="box_bottom"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+
+
+
+</body>
+
+
+</html>

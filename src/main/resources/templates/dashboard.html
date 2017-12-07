@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Flower Shop - Contact</title>
+<meta http-equiv="Content-Type"
+	content="text/html; charset=windows-1252" />
+<link rel="stylesheet" type="text/css" href="..static/css/style.css"
+	th:href="@{/css/style.css}" />
+</head>
+<body>
+	<div id="wrap">
+		<div class="header">
+			<div class="logo">
+				<a href="#"><img src="images/logo.gif" alt="" border="0" /></a>
+			</div>
+			<!-- include menu fragment -->
+			<div id="menu" th:include="fragments :: menu"></div>
+		</div>
+		<div class="center_content">
+			<div class="left_content">
+				<div class="title">
+					<span class="title_icon"><img src="images/bullet1.gif"
+						alt="" /></span>Admin Panel
+				</div>
+				<div class="feat_prod_box_details">
+					<div class="contact_form">
+						<div class="form_subtitle">Options</div>
+						<div sec:authorize="hasRole('ROLE_ADMIN')">
+							<ul>
+								<li><a th:href="@{/dashboard/products}">Products</a></li>
+								<li><a th:href="@{/dashboard/orders}">Orders</a></li>
+								<li><a th:href="@{/dashboard/statistics}">Statistics</a></li>
+							</ul>
+						</div>
+						<div sec:authorize="!hasRole('ROLE_ADMIN')">
+							<h2>Your are not permitted to view this page</h2>
+						</div>
+						
+						
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<!--end of left content-->
+			<div class="right_content">
+
+				<div style="height:300px;overflow:auto;">
+					<!-- Products -->
+					<div th:if="${products != null}" class="row" th:each="product,iter : ${products}">
+					
+					<em><span th:text="${iter.index}"></span>: </em>
+					<ul>
+						<li>Name: <span th:text="${product.name}"></span></li>
+						<li>Description: <span th:text="${product.description}"></span></li>
+						<li>Price: <span th:text="${product.price}"></span> $</li>
+						<li>Quantity: <span th:text="${product.quantity}"></span></li>
+					</ul>
+					</div>
+					
+					<!-- Orders -->
+					<div th:if="${orders != null}" class="row" th:each="florist,iter : ${orders}">
+		
+						<em><span th:text="${iter.index}"></span>: </em>
+						<ul>
+							<li>Florist: <span th:text="${florist.name}"></span></li>
+							<li> Orders:
+ 							<div class="row" th:each="order,iter : ${florist.orders}">
+								<ul>
+									<li>Total Cost: <span th:text="${order.totalCost}"></span></li>
+									<li>Outstanding Balance: <span th:text="${order.paid}"></span></li>
+									  <li> Products:
+										<div class="row" th:each="product,iter : ${order.products}">
+											<ul>
+												<li>Name: <span th:text="${product.name}"></span></li>
+												<li>Description: <span th:text="${product.description}"></span></li>
+												<li>Price: <span th:text="${product.price}"></span> $</li>
+												<li>Quantity: <span th:text="${product.quantity}"></span></li>
+											</ul>
+											<br></br>
+										</div>
+									</li>
+								</ul>
+							</div>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+				<!-- Statistics -->
+				
+				<div th:if="${statistics != null}" class="row">
+					<ul>			
+						<li>Shop Name: <span th:text="${statistics.name}"></span></li>
+						<li>Total Orders: <span th:text="${statistics.totalOrder}"></span></li>
+						<li>Total Revenue: <span th:text="${statistics.totalRevenue}"></span> $</li>
+						<li>Best Product: <span th:text="${statistics.bestProduct}"></span></li>
+					</ul>
+				</div>
+			</div>
+			<!--end of right content-->
+			<div class="clear"></div>
+		</div>
+		<!--end of center content-->
+		<div class="footer" th:include="fragments :: footer"></div>
+	</div>
+</body>
+</html>

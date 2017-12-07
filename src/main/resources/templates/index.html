@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<!-- I made great use of fragments so see fragments.html for a list of the different sections fragmented. This kept the code nice and clean.
+I also made use of th:each to loop through lists and variables. There is use of thymeleaf on all html pages so I will only comment here. 
+The form is on the specials.html and you can see how object is sent using th:object -->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Flower Shop - Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="..static/css/style.css"
+	th:href="@{/css/style.css}" />
+</head>
+<body>
+	<div id="wrap">
+		<div class="header">
+			<div class="logo">
+				<a href="#"><img src="images/logo.gif" alt="" border="0" /></a>
+			</div>
+			<!-- include menu fragment -->
+			<div id="menu" th:include="fragments :: menu"></div>
+		</div>
+		<div class="center_content">
+			<div class="left_content">
+				<div class="title">
+					<span class="title_icon"><img src="images/bullet1.gif"
+						alt="" /></span>Special gifts
+				</div>
+				<div class="feat_prod_box" th:each="product : ${productList}">
+					<div th:include="fragments :: specials"></div>
+				</div>
+
+				<div class="clear"></div>
+			</div>
+			<!-- end of left content -->
+			<div class="right_content">
+				<div class="cart">
+					<div class="title">
+						<span class="title_icon"><img src="images/cart.gif" alt="" /></span>My
+						cart
+					</div>
+					<div class="home_cart_content">
+						<span>Items: </span> <span th:text="${cartCount}"></span><span>
+							| </span><span class="red">Total: </span><span class="red"
+							th:text="${cartTotal}"></span><span class="red">$</span>
+					</div>
+					<a th:href="@{/cart}" class="view_cart">view cart</a>
+				</div>
+				<div class="title">
+					<span class="title_icon"><img src="images/bullet3.gif"
+						alt="" /></span>About Our Shop
+				</div>
+				<div class="about">
+					<p>
+						<img src="images/about.gif" alt="" class="right" /> Lorem ipsum
+						dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+						minim veniam, quis nostrud.
+					</p>
+				</div>
+
+			</div>
+			<!-- end of right content -->
+			<div class="clear"></div>
+		</div>
+		<!-- end of center content -->
+		<div class="footer" th:include="fragments :: footer"></div>
+	</div>
+</body>
+</html>
