@@ -5,9 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import com.cit.entities.Product;
+import com.cit.entities.Bundle;
 import com.cit.services.CartService;
-import com.cit.services.ProductService;
+import com.cit.services.BundleService;
 
 //Similar to cart controller with more session attributes to keep persistency
 @Controller
@@ -16,12 +16,12 @@ public class ViewController {
 
 
 	@Autowired
-	private ProductService productService;
+	private BundleService productService;
 
 	@Autowired
 	private CartService cartService;
 
-	public ViewController(ProductService productService, CartService cartService) {
+	public ViewController(BundleService productService, CartService cartService) {
 		this.productService = productService;
 		this.cartService = cartService;
 
@@ -31,7 +31,7 @@ public class ViewController {
 	public String index(ModelMap model) {
 
 		model.addAttribute("productList", productService.findAll());
-		model.addAttribute("product", new Product());
+		model.addAttribute("product", new Bundle());
 		model.addAttribute("cartCount", cartService.getCartCount());
 		model.addAttribute("cartTotal", cartService.getCartTotal());
 		model.addAttribute("cartList", cartService.getCartList());
@@ -63,7 +63,7 @@ public class ViewController {
 		return "cart";
 	}
 
-	@RequestMapping("/cart/confirm")
+	@RequestMapping("/checkConfirm")
 	public String cartConfirm(ModelMap model) {
 
 		return "checkConfirm";

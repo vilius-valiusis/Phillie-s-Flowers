@@ -2,7 +2,7 @@ package com.cit.services;
 //CartService Interface
 import java.util.List;
 
-import com.cit.entities.Product;
+import com.cit.entities.Bundle;
 
 public interface CartService {
 
@@ -18,11 +18,11 @@ public interface CartService {
 
 	public void resetCartTotal();
 
-	public List<Product> findAll();
+	public List<Bundle> findAll();
 
-	public void addProduct(Product p);
+	public void addProduct(Bundle p);
 
-	public List<Product> getCartList();
+	public List<Bundle> getCartList();
 
 	public void resetCartList();
 

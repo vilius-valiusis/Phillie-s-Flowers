@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import com.cit.entities.Product;
+import com.cit.entities.Bundle;
 import com.cit.services.CartService;
 import com.cit.services.ShopService;
 
@@ -36,7 +36,7 @@ public class CartController {
 	 that allows me retrun to previous page and update cartCount.*/
 	
 	@PostMapping("/cart/add")															
-	public String addProduct(Product product, ModelMap model, RedirectAttributes redir) {
+	public String addProduct(Bundle product, ModelMap model, RedirectAttributes redir) {
 
 		cartService.addCartCount();
 		cartService.getCartCount();
@@ -44,11 +44,9 @@ public class CartController {
 		cartService.addToCartTotal(product.getPrice());
 		redir.addFlashAttribute("cartCount", cartService.getCartCount());				
 
-		return "redirect:/";
+		return "redirect:/specials";
 	}
 
-	/*Checkout is pretty much a signal to update cart and shop database so
-	I did not need a post request as no data was beings sent from html page.*/
 	
 	@GetMapping("/cart/checkout")
 	public String checkout(ModelMap model) {
@@ -60,7 +58,7 @@ public class CartController {
 		cartService.resetCartTotal();
 		model.addAttribute("cartCount", cartService.getCartCount());					
 
-		return "checkConfirm";
+		return "redirect:/checkConfirm";
 	}
 
 }

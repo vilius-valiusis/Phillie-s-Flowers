@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Flower Shop - Cart</title>
+<title th:text="#{index.title}"></title>
 <meta http-equiv="Content-Type"
-	content="text/html; charset=windows-1252" />
+	content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="..static/css/style.css"
 	th:href="@{/css/style.css}" />
 </head>
@@ -19,8 +19,8 @@
 		<div class="center_content">
 			<div class="left_content">
 				<div class="title">
-					<span class="title_icon"><img src="images/bullet1.gif"
-						alt="" /></span>Thank You for Your Order!
+					<span class="title_icon" th:text="#{index.thanks}"><img src="images/bullet1.gif"
+						alt="" /></span>
 				</div>
 
 
@@ -28,24 +28,25 @@
 			</div>
 			<!--end of left content-->
 			<div class="right_content">
-
+				<div class="languages_box" th:include="fragments :: langBar">
+					
+				</div>
 				<div class="cart">
 					<div class="title">
-						<span class="title_icon"><img src="images/cart.gif" alt="" /></span>My
-						cart
+						<span class="title_icon" th:text="#{index.heading.cart}"><img src="images/cart.gif" alt="" /></span>
 					</div>
 					<div class="home_cart_content" th:text="0">
 						empty <span class="red">TOTAL: 100$</span>
 					</div>
-					<a th:href="@{/cart}" class="view_cart">view cart</a>
+					<a th:href="@{/cart}" class="view_cart" th:text="#{index.heading.view}"></a>
 				</div>
 				<div class="title">
-					<span class="title_icon"><img src="images/bullet3.gif"
-						alt="" /></span>About Our Shop
+					<span class="title_icon" th:text="#{index.heading.about}"><img src="images/bullet3.gif"
+						alt="" /></span>
 				</div>
 				<div class="about">
 					<p>
-						<img src="images/about.gif" alt="" class="right" />
+						<img src="images/about.gif" alt="" class="right" th:text="#{index.textfiller}"/>
 					</p>
 				</div>
 

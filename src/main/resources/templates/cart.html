@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Flower Shop - Cart</title>
+<title th:text="#{index.title}"></title>
 <meta http-equiv="Content-Type"
 	content="text/html; charset=windows-1252" />
 <link rel="stylesheet" type="text/css" href="..static/css/style.css"
@@ -19,17 +19,17 @@
 		<div class="center_content">
 			<div class="left_content">
 				<div class="title">
-					<span class="title_icon"><img src="images/bullet1.gif"
-						alt="" /></span>My cart
+					<span class="title_icon" th:text="#{index.heading.cart}"><img
+						src="images/bullet1.gif" alt="" /></span>
 				</div>
 				<div class="feat_prod_box_details">
 					<table class="cart_table">
 						<tr class="cart_title">
-							<td>Item pic</td>
-							<td>Product name</td>
-							<td>Unit price</td>
+							<td th:text="#{cart.pic}"></td>
+							<td th:text="#{cart.name}"></td>
+							<td th:text="#{cart.price}"></td>
 							<td></td>
-							<td>     </td>
+							<td></td>
 						</tr>
 
 
@@ -39,13 +39,13 @@
 						</div>
 
 						<tr>
-							<td colspan="4" class="cart_total"><span class="red">FREE
-									SHIPPING:</span></td>
-							<td>0</td>
+							<td colspan="4" class="cart_total" ><span
+								class="red" th:text="#{cart.shipping}"> </span></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td colspan="4" class="cart_total"><span class="red">TOTAL:</span></td>
-							
+
 							<td th:inline="text" th:text="${cartTotal}"></td>
 						</tr>
 					</table>
@@ -55,24 +55,27 @@
 			</div>
 			<!--end of left content-->
 			<div class="right_content">
+				<div class="languages_box" th:include="fragments :: langBar">
 
+				</div>
 				<div class="cart">
 					<div class="title">
-						<span class="title_icon"><img src="images/cart.gif" alt="" /></span>My
-						cart
+						<span class="title_icon" th:text="#{index.heading.cart}"><img
+							src="images/cart.gif" alt="" /></span>
 					</div>
 					<div class="home_cart_content" th:text="${cartCount}">
-						empty <span class="red" th:text="${cartTotal}">TOTAL: 100$</span>
+						empty <span class="red" th:text="${cartTotal}"></span>
 					</div>
-					<a th:href="@{/cart}" class="view_cart">view cart</a>
+					<a th:href="@{/cart}" class="view_cart"
+						th:text="#{index.heading.view}"></a>
 				</div>
 				<div class="title">
-					<span class="title_icon"><img src="images/bullet3.gif"
-						alt="" /></span>About Our Shop
+					<span class="title_icon" th:text="#{index.heading.about}"><img
+						src="images/bullet3.gif" alt="" /></span>
 				</div>
 				<div class="about">
 					<p>
-						<img src="images/about.gif" alt="" class="right" />
+						<img src="images/about.gif" alt="" class="right" th:text="#{index.textfiller}"/>
 					</p>
 				</div>
 

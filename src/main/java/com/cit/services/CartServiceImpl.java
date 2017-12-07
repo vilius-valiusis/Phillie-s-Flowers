@@ -3,7 +3,7 @@ package com.cit.services;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
-import com.cit.entities.Product;
+import com.cit.entities.Bundle;
 
 @Service
 public class CartServiceImpl implements CartService {
@@ -11,7 +11,7 @@ public class CartServiceImpl implements CartService {
 	//These variables are stored as sessions attributes and deleted after checkout
 	int cartCount;
 	double cartTotal;
-	List<Product> cartList = new ArrayList<Product>();
+	List<Bundle> cartList = new ArrayList<Bundle>();
 
 	public CartServiceImpl() {
 
@@ -46,25 +46,25 @@ public class CartServiceImpl implements CartService {
 
 	}
 
-	public List<Product> findAll() {
+	public List<Bundle> findAll() {
 
 		return cartList;
 	}
 
-	public void addProduct(Product p) {
+	public void addProduct(Bundle p) {
 
 		cartList.add(p);
 
 	}
 
-	public List<Product> getCartList() {
+	public List<Bundle> getCartList() {
 
 		return cartList;
 	}
 
 	public void resetCartList() {
 
-		this.cartList = new ArrayList<Product>();
+		this.cartList = new ArrayList<Bundle>();
 	}
 
 	public void addToCartTotal(Double amount) {
