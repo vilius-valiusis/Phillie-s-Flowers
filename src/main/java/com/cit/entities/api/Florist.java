@@ -9,10 +9,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
 import javax.persistence.GeneratedValue;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import com.cit.deserializers.OrderDeserializer;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
 @JsonRootName(value = "florist")
+@Document 
 public class Florist
 {
   @Id

@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface FloristRepository extends MongoRepository<Florist, String>
 {
 	Florist findOne(String paramString);
+	
+	Florist findByName(String name);
 }

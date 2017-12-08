@@ -12,10 +12,13 @@ import java.util.List;
 import javax.persistence.GeneratedValue;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import com.cit.deserializers.ProductDeserializer;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
 @JsonRootName(value = "order")
+@Document 
 public class Order
 {
   @Id
