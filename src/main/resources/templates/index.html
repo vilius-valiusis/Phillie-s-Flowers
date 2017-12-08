@@ -19,6 +19,7 @@ The form is on the specials.html and you can see how object is sent using th:obj
 				<a href="#"><img src="images/logo.gif" alt="" border="0" /></a>
 			</div>
 			<!-- include menu fragment -->
+			
 			<div id="menu" th:include="fragments :: menu"></div>
 		</div>
 		<div class="center_content">
@@ -35,9 +36,12 @@ The form is on the specials.html and you can see how object is sent using th:obj
 			</div>
 			<!-- end of left content -->
 			<div class="right_content">
-				<div class="languages_box" th:include="fragments :: langBar">
+				<div class="languages_box" th:include="fragments :: langBar"></div>
+				
+								
+				<div class="admin" th:include="fragments :: admin"></div>
 					
-				</div>
+				
 				
 				<div class="cart">
 					<div class="title">

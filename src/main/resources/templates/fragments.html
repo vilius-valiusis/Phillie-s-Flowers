@@ -12,6 +12,8 @@
 
 <body>
 
+	
+
 	<div th:fragment="cartItems">
 		<tr>
 			<td><img th:src="${product.imageUrl}" alt="" border="0"
@@ -22,13 +24,22 @@
 		</tr>
 	</div>
 
+	<div th:fragment="admin">
+		<span sec:authorize="isAnonymous()"> <a th:href="@{/login}"
+			th:text="#{index.login}"></a>
+		</span> <span sec:authorize="isAuthenticated()"> <a
+			th:href="@{/dashboard}" th:text="#{index.dashboard}"></a>
+		</span>
+
+	</div>
+
 	<div th:fragment="langBar">
 
 		<span class="red">Languages:</span> <a th:href="@{/?lang=uk}"><img
 			src="images/gb.gif" alt="" border="0" /></a> <a th:href="@{/?lang=fr}"><img
 			src="images/fr.gif" alt="" border="0" /></a> <a th:href="@{/?lang=de}"><img
 			src="images/de.gif" alt="" border="0" /></a>
-
+		
 	</div>
 
 	<div th:fragment="menu">
@@ -38,12 +49,6 @@
 			<li><a th:href="@{/about}" th:text="#{index.about}"></a></li>
 			<li><a th:href="@{/specials}" th:text="#{index.bundles}"></a></li>
 			<li><a th:href="@{/contact}" th:text="#{index.contact}"></a></li>
-			<div sec:authorize="isAnonymous()">
-				<li><a th:href="@{/login}" th:text="#{index.login}"></a></li>
-			</div>
-			<div sec:authorize="isAuthenticated()">
-				<li><a th:href="@{/dashboard}" th:text="#{index.dashboard}"></a></li>
-			</div>
 		</ul>
 	</div>
 

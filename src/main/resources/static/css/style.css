@@ -7,7 +7,7 @@ body {
 	color: #000000;
 }
 
-a {
+style>a {
 	color: #990000;
 }
 
@@ -622,4 +622,9 @@ div.pagination span.disabled {
 	text-decoration: none;
 	padding: 0 5px 0 5px;
 	color: #afaeaf;
+}
+
+.admin {
+	float: right;
+	padding: 0px 10px 0 0px;
 }
