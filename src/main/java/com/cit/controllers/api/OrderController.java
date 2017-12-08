@@ -3,7 +3,10 @@ package com.cit.controllers.api;
 import com.cit.entities.api.Order;
 import com.cit.repositories.api.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,26 +18,26 @@ public class OrderController
   @Autowired
   OrderRepository orderRepository;
   
-  @RequestMapping(method=RequestMethod.GET, value="/api/orders")
+  @GetMapping("/api/orders")
   public Iterable<Order> order()
   {
     return this.orderRepository.findAll();
   }
   
-  @RequestMapping(method=RequestMethod.POST, value="/api/orders")
+  @PostMapping("/api/orders")
   public String save(@RequestBody Order bundle)
   {
     this.orderRepository.save(bundle);
     return bundle.getId();
   }
   
-  @RequestMapping(method=RequestMethod.GET, value="/api/orders/{id}")
+  @GetMapping("/api/orders/{id}")
   public Order show(@PathVariable String id)
   {
     return this.orderRepository.findOne(id);
   }
   
-  @RequestMapping(method=RequestMethod.PUT, value="/api/orders/{id}")
+  @PutMapping("/api/orders/{id}")
   public Order update(@PathVariable String id, @RequestBody Order order)
   {
     Order ord = this.orderRepository.findOne(id);
