@@ -44,11 +44,9 @@ public class CartController {
 		cartService.addToCartTotal(product.getPrice());
 		redir.addFlashAttribute("cartCount", cartService.getCartCount());				
 
-		return "redirect:/";
+		return "redirect:/specials";
 	}
 
-	/*Checkout is pretty much a signal to update cart and shop database so
-	I did not need a post request as no data was beings sent from html page.*/
 	
 	@GetMapping("/cart/checkout")
 	public String checkout(ModelMap model) {
@@ -60,7 +58,7 @@ public class CartController {
 		cartService.resetCartTotal();
 		model.addAttribute("cartCount", cartService.getCartCount());					
 
-		return "checkConfirm";
+		return "redirect:/checkConfirm";
 	}
 
 }

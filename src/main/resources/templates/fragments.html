@@ -22,18 +22,27 @@
 		</tr>
 	</div>
 
+	<div th:fragment="langBar">
+
+		<span class="red">Languages:</span> <a th:href="@{/?lang=uk}"><img
+			src="images/gb.gif" alt="" border="0" /></a> <a th:href="@{/?lang=fr}"><img
+			src="images/fr.gif" alt="" border="0" /></a> <a th:href="@{/?lang=de}"><img
+			src="images/de.gif" alt="" border="0" /></a>
+
+	</div>
+
 	<div th:fragment="menu">
 		<!-- Here I am using thymeleaf to set paths -->
 		<ul>
-			<li><a th:href="@{/}">HOME</a></li>
-			<li><a th:href="@{/about}">ABOUT</a></li>
-			<li><a th:href="@{/specials}">GIFT PACKAGES</a></li>
-			<li><a th:href="@{/contact}">CONTACT</a></li>
+			<li><a th:href="@{/}" th:text="#{index.home}"></a></li>
+			<li><a th:href="@{/about}" th:text="#{index.about}"></a></li>
+			<li><a th:href="@{/specials}" th:text="#{index.bundles}"></a></li>
+			<li><a th:href="@{/contact}" th:text="#{index.contact}"></a></li>
 			<div sec:authorize="isAnonymous()">
-				<li><a th:href="@{/login}">LOGIN</a></li>
+				<li><a th:href="@{/login}" th:text="#{index.login}"></a></li>
 			</div>
 			<div sec:authorize="isAuthenticated()">
-				<li><a th:href="@{/dashboard}">DASHBOARD</a></li>
+				<li><a th:href="@{/dashboard}" th:text="#{index.dashboard}></a></li>
 			</div>
 		</ul>
 	</div>
@@ -58,19 +67,18 @@
 		<div class="prod_det_box">
 			<div class="box_top"></div>
 			<div class="box_center">
-				<div class="prod_title" th:text="${product.name}">Christmas
-					Package</div>
+				<div class="prod_title" th:text="${product.name}"></div>
 				<p class="details">
-					Item1: <span th:text="${product.item1}"></span>.
+					<span th:text="${product.item1}"></span>
 				</p>
 				<p class="details">
-					Item2: <span th:text="${product.item2}"></span>.
+					<span th:text="${product.item2}"></span>
 				</p>
 				<p class="details">
-					Item3: <span th:text="${product.item3}"></span>.
+					<span th:text="${product.item3}"></span>
 				</p>
 				<p class="details">
-					Price: <span th:text="${product.price}"></span>.
+					Price: <span th:text="${product.price}"></span>
 				</p>
 
 				<div class="clear"></div>

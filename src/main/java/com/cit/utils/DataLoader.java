@@ -52,15 +52,15 @@ public class DataLoader
     Product op5 = new Product("Amaryllis", "red Amaryllis", Double.valueOf(2.99D), Integer.valueOf(60));
     
     ArrayList<Bundle> bundles = new ArrayList<Bundle>();
-    Bundle p1 = new Bundle("Valentines Package", "roses", "luxury chocolates", "heart teddy", Double.valueOf(50.0D), 5, "images/prod1.gif");
-    Bundle p2 = new Bundle("Easter Package", "daffodils", "easter egg", "chick teddy", Double.valueOf(45.0D), 10, "images/prod2.gif");
-    Bundle p3 = new Bundle("Christmas Package", "tulips", "pudding", "stocking", Double.valueOf(65.0D), 3, "images/prod3.gif");
-    Bundle p4 = new Bundle("Birthday Package", "venus flytrap", "cake", "voucher", Double.valueOf(85.0D), 22, "images/prod4.gif");
-    
-    bundles.add(p1);
-    bundles.add(p2);
-    bundles.add(p3);
-    bundles.add(p4);
+    Bundle p1 = new Bundle("Valentines Package", "Red Roses", "Luxury Chocolates", "Heart shaped Teddy", 50.00, 5, "images/prod4.gif");
+	Bundle p2 = new Bundle("Easter Package", "Selection of Daffodils", "Easter Egg", "Chick shaped Teddy", 45.00, 10, "images/easter.gif");
+	Bundle p3 = new Bundle("Christmas Package", "Selection of Tulips", "Xmas Pudding", "Xmas Stocking", 65.00, 3, "images/xmas.gif");
+	Bundle p4 = new Bundle("Birthday Package", "Venus Flytrap", "Custom Birthday Cake", "Gift Voucher", 85.00, 22, "images/cake.png");
+	
+	bundles.add(p1);
+	bundles.add(p2);
+	bundles.add(p3);
+	bundles.add(p4);
     
     Order or1 = new Order(true, 26.98D, Arrays.asList(new Product[] { op1,op2,op3}));
     Order or2 = new Order(true, 32.98D, Arrays.asList(new Product[] { op2,op4,op1}));

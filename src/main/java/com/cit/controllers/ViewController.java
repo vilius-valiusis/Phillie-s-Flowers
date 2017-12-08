@@ -74,9 +74,9 @@ public class ViewController
     return "login";
   }
   
-  @RequestMapping({"/cart/confirm"})
-  public String cartConfirm(ModelMap model)
-  {
-    return "checkConfirm";
-  }
+  @RequestMapping("/checkConfirm")
+	public String cartConfirm(ModelMap model) {
+
+		return "checkConfirm";
+	}
 }

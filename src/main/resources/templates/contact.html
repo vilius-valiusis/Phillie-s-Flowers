@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Flower Shop - Contact</title>
+<title th:text="#{index.title}"></title>
 <meta http-equiv="Content-Type"
 	content="text/html; charset=windows-1252" />
 <link rel="stylesheet" type="text/css" href="..static/css/style.css"
@@ -20,8 +20,8 @@
 		<div class="center_content">
 			<div class="left_content">
 				<div class="title">
-					<span class="title_icon"><img src="images/bullet1.gif"
-						alt="" /></span>Contact Us
+					<span class="title_icon" th:text="#{index.contact}"><img src="images/bullet1.gif"
+						alt="" /></span>
 				</div>
 				<div class="feat_prod_box_details">
 					<p class="details">Lorem ipsum dolor sit amet, consectetur
@@ -61,30 +61,28 @@
 			</div>
 			<!--end of left content-->
 			<div class="right_content">
+				<div class="languages_box" th:include="fragments :: langBar">
 
+				</div>
 
 				<div class="cart">
 					<div class="title">
-						<span class="title_icon"><img src="images/cart.gif" alt="" /></span>My
-						cart
+						<span class="title_icon" th:text="#{index.heading.cart}"><img src="images/cart.gif" alt="" /></span>
 					</div>
 					<div class="home_cart_content">
 						<span>Items: </span> <span th:text="${cartCount}"></span><span>
 							| </span><span class="red">Total: </span><span class="red"
 							th:text="${cartTotal}"></span><span class="red">$</span>
 					</div>
-					<a th:href="@{/cart}" class="view_cart">view cart</a>
+					<a th:href="@{/cart}" class="view_cart" th:text="#{index.heading.view}"></a>
 				</div>
 				<div class="title">
-					<span class="title_icon"><img src="images/bullet3.gif"
-						alt="" /></span>About Our Shop
+					<span class="title_icon" th:text="#{index.heading.about}"><img src="images/bullet3.gif"
+						alt="" /></span>
 				</div>
 				<div class="about">
 					<p>
-						<img src="images/about.gif" alt="" class="right" /> Lorem ipsum
-						dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-						minim veniam, quis nostrud.
+						<img src="images/about.gif" alt="" class="right" th:text="#{index.textfiller}"/> 
 					</p>
 				</div>
 

@@ -16,5 +16,4 @@ public interface BundleRepository extends MongoRepository<Bundle, String>{
 	
 	Bundle getByName(String name);
 	
-	
 }
