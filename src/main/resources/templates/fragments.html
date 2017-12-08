@@ -42,7 +42,7 @@
 				<li><a th:href="@{/login}" th:text="#{index.login}"></a></li>
 			</div>
 			<div sec:authorize="isAuthenticated()">
-				<li><a th:href="@{/dashboard}" th:text="#{index.dashboard}></a></li>
+				<li><a th:href="@{/dashboard}" th:text="#{index.dashboard}"></a></li>
 			</div>
 		</ul>
 	</div>

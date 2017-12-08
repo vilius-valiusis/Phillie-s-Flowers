@@ -22,17 +22,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 			.formLogin()
 		    .loginPage("/login.html")
-		    .failureUrl("/login-error.html")
+		    .failureUrl("/login.html")
 		.and()
 		    .logout()
 		    .logoutSuccessUrl("/index.html")
 		.and()
 		    .authorizeRequests()
-		    .antMatchers("/dashboard/**").hasRole("ADMIN")
-		.and()
-		    .exceptionHandling()
-		    .accessDeniedPage("/403.html");
-		
+		    .antMatchers("/dashboard/**").hasRole("ADMIN");
 		
 		http.csrf().disable();
 	}

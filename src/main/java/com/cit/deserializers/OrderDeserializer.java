@@ -12,11 +12,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class OrderDeserializer extends JsonDeserializer<List<Order>>{
 
 	@Override
-	public List<Order> deserialize(JsonParser jsonParser, DeserializationContext arg1)
-			throws IOException, JsonProcessingException {
+	public List<Order> deserialize(JsonParser jsonParser, DeserializationContext arg1) throws IOException, JsonProcessingException {
 		ObjectMapper mapper = new ObjectMapper();
 		List<Order> orders = mapper.readValue(jsonParser, mapper.getTypeFactory().constructCollectionType(List.class, Order.class));
-
 		return orders;
 	}
 

@@ -1,10 +1,11 @@
 package com.cit.repositories.api;
 
 import com.cit.entities.api.Order;
-import org.springframework.data.mongodb.repository.MongoRepository;
 
-public abstract interface OrderRepository
-  extends MongoRepository<Order, String>
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+@Repository
+public interface OrderRepository extends MongoRepository<Order, String>
 {
-  public abstract Order findOne(String paramString);
+	Order findOne(String paramString);
 }
