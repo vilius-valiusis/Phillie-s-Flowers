@@ -1,5 +1,10 @@
 package com.cit.controllers;
 
+/*
+ * Dashboard controller used to retrieve data for the dashboard
+ * from the restful client for the use of dashboard.html
+ */
+
 import com.cit.services.ShopService;
 import com.cit.services.api.RestService;
 
@@ -25,6 +30,7 @@ public class DashboardController{
 	  @RequestMapping("/dashboard/products")
 	  public String products(Model model)
 	  {
+		// Retrieves all products received from the API
 	    model.addAttribute("products", this.restfulClient.getProducts());
 	    return "/dashboard";
 	  }
@@ -32,6 +38,7 @@ public class DashboardController{
 	  @RequestMapping("/dashboard/orders")
 	  public String florists(Model model)
 	  {
+		// Retrieves all orders received from the API
 		model.addAttribute("orders", this.restfulClient.getFlorists());
 	    return "/dashboard";
 	  }
@@ -39,6 +46,7 @@ public class DashboardController{
 	  @RequestMapping("/dashboard/statistics")
 	  public String statistics(ModelMap model)
 	  {
+		// Retrieves all florists received from the API
 		model.addAttribute("statistics", this.shopService.getByName("Phillies"));
 	    return "/dashboard";
 	  }

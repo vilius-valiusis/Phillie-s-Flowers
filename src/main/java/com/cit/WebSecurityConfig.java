@@ -18,6 +18,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	DataSource dataSource;
 	
+	// Configures login and logout functionality for the website 
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.formLogin()
@@ -33,6 +34,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable();
 	}
 
+	// Creates temporary user accounts to be for restricting access to the dashboard
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication().

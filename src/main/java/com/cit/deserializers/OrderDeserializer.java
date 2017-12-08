@@ -1,5 +1,8 @@
 package com.cit.deserializers;
-
+/*
+ * Class used to deserialize JSON array of Orders so they can be translated to List of Orders
+ * as this process requires extra logic to the way JSON are handled by Jackson
+ */
 import java.io.IOException;
 import java.util.List;
 import com.cit.entities.api.Order;

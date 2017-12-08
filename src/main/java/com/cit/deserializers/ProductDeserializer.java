@@ -9,7 +9,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
+/*
+ * Class used to deserialize JSON array of Product so they can be translated to List of Product
+ * as this process requires extra logic to the way JSON are handled by Jackson
+ */
 public class ProductDeserializer  extends JsonDeserializer<List<Product>>{
 
 	@Override

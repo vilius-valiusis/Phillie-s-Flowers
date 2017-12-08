@@ -4,6 +4,7 @@ import javax.persistence.GeneratedValue;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;
 
+
 public class Product
 {
   @Id

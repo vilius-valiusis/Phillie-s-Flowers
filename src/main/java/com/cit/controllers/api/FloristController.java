@@ -1,5 +1,8 @@
 package com.cit.controllers.api;
-
+/*
+ * API controller for florists
+ * Allowing for get update individual and multiple florists   
+ */
 import com.cit.entities.api.Florist;
 import com.cit.repositories.api.FloristRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,13 +11,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class FloristController
-{
+public class FloristController{
+	
   @Autowired
   FloristRepository floristRepository;
   
