@@ -628,3 +628,12 @@ div.pagination span.disabled {
 	float: right;
 	padding: 0px 10px 0 0px;
 }
+
+.scroll{
+	height:300px; 
+	width:100%;
+	overflow:hidden; 
+	overflow-y:scroll;
+	
+	
+}

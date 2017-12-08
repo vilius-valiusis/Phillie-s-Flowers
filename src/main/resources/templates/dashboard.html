@@ -28,9 +28,9 @@
 						<div class="form_subtitle">Options</div>
 						<div sec:authorize="hasRole('ROLE_ADMIN')">
 							<ul>
-								<li><a th:href="@{/dashboard/products}">Products</a></li>
-								<li><a th:href="@{/dashboard/orders}">Orders</a></li>
-								<li><a th:href="@{/dashboard/statistics}">Statistics</a></li>
+								<li><a th:href="@{/dashboard/products}">Flower Pricing</a></li>
+								<li><a th:href="@{/dashboard/orders}">Previous Orders</a></li>
+								<li><a th:href="@{/dashboard/statistics}">Shop Overview</a></li>
 							</ul>
 						</div>
 						<div sec:authorize="!hasRole('ROLE_ADMIN')">
@@ -44,8 +44,8 @@
 			</div>
 			<!--end of left content-->
 			<div class="right_content">
-
-				<div style="height:300px;overflow:auto;">
+			
+				<div class="scroll">
 					<!-- Products -->
 					<div th:if="${products != null}" class="row" th:each="product,iter : ${products}">
 					
@@ -86,7 +86,7 @@
 							
 						</ul>
 					</div>
-				</div>
+				
 				<!-- Statistics -->
 				
 				<div th:if="${statistics != null}" class="row">
@@ -97,6 +97,7 @@
 						<li>Best Product: <span th:text="${statistics.bestProduct}"></span></li>
 					</ul>
 				</div>
+			</div>
 			</div>
 			<!--end of right content-->
 			<div class="clear"></div>

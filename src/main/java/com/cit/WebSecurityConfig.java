@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.access.AccessDeniedHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -18,17 +19,25 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	DataSource dataSource;
 	
+	@Autowired
+    private AccessDeniedHandler accessDeniedHandler;
+	
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.formLogin()
 		    .loginPage("/login.html")
-		    .failureUrl("/login.html")
+		    
+		    
 		.and()
 		    .logout()
 		    .logoutSuccessUrl("/index.html")
+		    
 		.and()
 		    .authorizeRequests()
-		    .antMatchers("/dashboard/**").hasRole("ADMIN");
+		    .antMatchers("/dashboard/**").hasRole("ADMIN")
+		    
+		.and()   
+			.exceptionHandling().accessDeniedHandler(accessDeniedHandler);
 		
 		http.csrf().disable();
 	}
