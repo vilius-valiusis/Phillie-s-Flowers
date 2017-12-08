@@ -38,37 +38,37 @@ public class ViewController
     return "index";
   }
   
-  @RequestMapping({"/about"})
+  @RequestMapping("/about")
   public String about(ModelMap model)
   {
     return "about";
   }
   
-  @RequestMapping({"/specials"})
+  @RequestMapping("/specials")
   public String specials(ModelMap model)
   {
     return "specials";
   }
   
-  @RequestMapping({"/contact"})
+  @RequestMapping("/contact")
   public String contact(ModelMap model)
   {
     return "contact";
   }
   
-  @RequestMapping({"/cart"})
+  @RequestMapping("/cart")
   public String cart(ModelMap model)
   {
     return "cart";
   }
   
-  @GetMapping({"/login"})
+  @GetMapping("/login")
   public String login(ModelMap model)
   {
     return "login";
   }
   
-  @PostMapping({"/login"})
+  @PostMapping("/login")
   public String loginSubmit(ModelMap model)
   {
     return "login";

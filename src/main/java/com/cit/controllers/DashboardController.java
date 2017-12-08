@@ -16,27 +16,27 @@ public class DashboardController{
 	  @Autowired
 	  private ShopService shopService;
 	  
-	  @RequestMapping({"/dashboard"})
+	  @RequestMapping("/dashboard")
 	  public String dashboard(ModelMap model)
 	  {
 	    return "/dashboard";
 	  }
 	  
-	  @RequestMapping({"/dashboard/products"})
+	  @RequestMapping("/dashboard/products")
 	  public String products(Model model)
 	  {
 	    model.addAttribute("products", this.restfulClient.getProducts());
 	    return "/dashboard";
 	  }
 	  
-	  @RequestMapping({"/dashboard/orders"})
+	  @RequestMapping("/dashboard/orders")
 	  public String florists(Model model)
 	  {
 		model.addAttribute("orders", this.restfulClient.getFlorists());
 	    return "/dashboard";
 	  }
 	  
-	  @RequestMapping({"/dashboard/statistics"})
+	  @RequestMapping("/dashboard/statistics")
 	  public String statistics(ModelMap model)
 	  {
 		model.addAttribute("statistics", this.shopService.getByName("Phillies"));
