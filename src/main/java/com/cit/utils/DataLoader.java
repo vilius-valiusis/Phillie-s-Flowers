@@ -39,6 +39,8 @@ public class DataLoader
     Shop phillies = new Shop("Phillies", 0, Double.valueOf(0.0D), "Valentines Package");
     
     List<Product> philliesProd = new ArrayList<Product>();
+    
+  
     philliesProd.add(new Product("rose", "red rose", Double.valueOf(5.99D), Integer.valueOf(300)));
     philliesProd.add(new Product("lily", "red lily", Double.valueOf(6.99D), Integer.valueOf(400)));
     philliesProd.add(new Product("Narcissus", "red Narcissus", Double.valueOf(4.99D), Integer.valueOf(200)));
@@ -50,6 +52,7 @@ public class DataLoader
     Product op3 = new Product("Narcissus", "red Narcissus", Double.valueOf(4.99D), Integer.valueOf(22));
     Product op4 = new Product("Daisy", "red Daisy", Double.valueOf(2.99D), Integer.valueOf(50));
     Product op5 = new Product("Amaryllis", "red Amaryllis", Double.valueOf(2.99D), Integer.valueOf(60));
+    
     
     ArrayList<Bundle> bundles = new ArrayList<Bundle>();
     Bundle p1 = new Bundle("Valentines Package", "Red Roses", "Luxury Chocolates", "Heart shaped Teddy", 50.00, 5, "images/prod4.gif");

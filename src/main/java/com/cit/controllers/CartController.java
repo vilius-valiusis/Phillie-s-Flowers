@@ -43,7 +43,7 @@ public class CartController {
 		cartService.addProduct(product);
 		cartService.addToCartTotal(product.getPrice());
 		redir.addFlashAttribute("cartCount", cartService.getCartCount());				
-
+		redir.addFlashAttribute("cartTotal", cartService.getCartTotal());
 		return "redirect:/specials";
 	}
 
