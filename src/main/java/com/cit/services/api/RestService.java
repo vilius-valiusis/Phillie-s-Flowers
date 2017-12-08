@@ -1,4 +1,4 @@
-package com.cit.services;
+package com.cit.services.api;
 
 import com.cit.entities.api.Florist;
 import com.cit.entities.api.Order;

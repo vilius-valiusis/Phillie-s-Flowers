@@ -1,7 +1,8 @@
 package com.cit.controllers;
 
-import com.cit.services.RestService;
 import com.cit.services.ShopService;
+import com.cit.services.api.RestService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
