@@ -21,7 +21,7 @@
 			<div class="left_content">
 				<div class="title">
 					<span class="title_icon"><img src="images/bullet1.gif"
-						alt="" /></span th:text="#{login.login}">
+						alt="" th:text="#{login.login}"/></span>
 				</div>
 				<div class="feat_prod_box_details">
 
@@ -31,11 +31,11 @@
 						<form th:action="@{/login.html}" method="post">
 							<div  th:if="${param.error}"><div class="red" th:text="#{login.details}"></div></div>
 							<div class="form_row">
-								<label for="username" th:text="#{login.user}">Username</label>: <input type="text"
+								<label for="username" th:text="#{login.user}"></label>: <input type="text"
 									id="username" name="username" autofocus="autofocus" /> <br />
 							</div>
 							<div class="form_row">
-								<label for="password" th:text="#{login.pass}">Password</label>: <input type="password"
+								<label for="password" th:text="#{login.pass}"></label>: <input type="password"
 									id="password" name="password" /> <br />
 							</div>
 							<div class="form_row">
@@ -52,19 +52,18 @@
 
 				<div class="cart">
 					<div class="title">
-						<span class="title_icon"><img src="images/cart.gif" alt="" th:text="#{index.heading.cart}" /></span>My
-						cart
+						<span class="title_icon"><img src="images/cart.gif" alt="" th:text="#{index.heading.cart}" /></span>
 					</div>
 					<div class="home_cart_content">
 						<span>Items: </span> <span th:text="${cartCount}"></span><span>
 							| </span><span class="red">Total: </span><span class="red"
 							th:text="${cartTotal}"></span><span class="red">$</span>
 					</div>
-					<a th:href="@{/cart}" class="view_cart" th:text="#{index.heading.view}">view cart</a>
+					<a th:href="@{/cart}" class="view_cart" th:text="#{index.heading.view}"></a>
 				</div>
 				<div class="title">
 					<span class="title_icon"><img src="images/bullet3.gif"
-						alt="" th:text="#{index.heading.about}"/></span>About Our Shop
+						alt="" th:text="#{index.heading.about}"/></span>
 				</div>
 				<div class="about">
 					<p>
