@@ -1,5 +1,5 @@
 package com.cit.entities;
-//Product entity with @Document adn @Id for database use
+//Bundle entity with @Document adn @Id for database use. Describes a bundle that is sold on the website.
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -15,6 +15,8 @@ public class Bundle {
 	private Double price;
 	private int quantity;
 	private String imageUrl;
+	
+	
 	public Bundle() {
 
 		

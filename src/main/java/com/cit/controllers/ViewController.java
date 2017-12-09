@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-/*This class is the main view controller than handles all .html page views and the variables that need to be displayed using model attribute*/
+/*This class is the main view controller than handles all .html page views and the variables that need to be displayed using model attribute
+ Session attrobutes is used to keep cart items in memeory and displayed on pages until checkout or exiting program*/
 
 @Controller
 @SessionAttributes({ "cartCount", "cartTotal", "cartList", "productList" })
 public class ViewController {
+	
 	@Autowired
 	private BundleService productService;
 	@Autowired

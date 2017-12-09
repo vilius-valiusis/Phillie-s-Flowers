@@ -10,7 +10,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.access.AccessDeniedHandler;
-
+/*This class allows for adequate web security and handles the access to the admin dashboard. It also makes use of a utility class
+we created called My access Denied Handler which handles exceptions related to authorisation.*/
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
@@ -25,17 +26,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.formLogin()
-		    .loginPage("/login.html")
-		    
-		    
+		    .loginPage("/login.html")		    
 		.and()
 		    .logout()
-		    .logoutSuccessUrl("/index.html")
-		    
+		    .logoutSuccessUrl("/index.html")		    
 		.and()
 		    .authorizeRequests()
-		    .antMatchers("/dashboard/**").hasRole("ADMIN")
-		    
+		    .antMatchers("/dashboard/**").hasRole("ADMIN")		    
 		.and()   
 			.exceptionHandling().accessDeniedHandler(accessDeniedHandler);
 		

@@ -17,6 +17,12 @@ public class FinalProject6Application extends WebMvcConfigurerAdapter {
 		SpringApplication.run(FinalProject6Application.class, args);
 	}
 	
+	
+	/*These three beans allow us to implement localisation on all pages. Session Local resolver lets use set default locale
+	, locale change interceptor lets use create a variable to be used in controller when describing the locale to change to,
+	Add interceptor is to add the new locale change interceptor. Localised variables are marked as #{var} in thymeleaf.  
+	See resources for two de and fr string property files. Select flag to change language on any html page.
+	Make sure browser is not set to auto translate.*/
 	@Bean
 	public SessionLocaleResolver localeResolver() {
 	    SessionLocaleResolver slr = new SessionLocaleResolver();

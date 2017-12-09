@@ -1,5 +1,5 @@
 package com.cit.entities;
-//Shop entity with @Document and @Id for database use
+//Shop entity with @Document and @Id for database use. Describes a shop such as our shop total order, total revenue, best product etc.
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 

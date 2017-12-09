@@ -15,7 +15,6 @@ import com.cit.entities.Bundle;
 import com.cit.services.CartService;
 import com.cit.services.ShopService;
 
-//Set Controller and Session Annotations. Sessions keeps cartCount on all pages.
 @Controller
 @SessionAttributes("cartCount")
 public class CartController {
