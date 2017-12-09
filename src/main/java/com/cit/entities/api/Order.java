@@ -25,73 +25,73 @@ public class Order
 	// when converting from JSON back to object.
 	// This is not a problem since we are not posting anything
 	// to the rest API.
-  @Id
-  @GeneratedValue
-  @JsonIgnore
-  private String id;
-  
-  private boolean paid;
-  private double totalCost;
-  
-  //Here I am telling jackson to use custom deserializer for the
- // List of products, since it cannot convert JSON arrays to java Collections
-  @JsonProperty("products")
-  @JsonDeserialize(using = ProductDeserializer.class)
-  private List<Product> products;
-  
-  public Order() {}
-  
-  public Order(boolean paid, double totalCost, List<Product> products)
-  {
-    this.paid = paid;
-    this.totalCost = totalCost;
-    this.products = products;
-  }
+@Id
+@GeneratedValue
+@JsonIgnore
+private String id;
 
-  public String getId()
-  {
-    return this.id;
-  }
-  
-  public void setId(String id)
-  {
-    this.id = id;
-  }
-  
-  public boolean isPaid()
-  {
-    return this.paid;
-  }
-  
-  public void setPaid(boolean paid)
-  {
-    this.paid = paid;
-  }
-  
-  public double getTotalCost()
-  {
-    return this.totalCost;
-  }
-  
-  public void setTotalCost(double totalCost)
-  {
-    this.totalCost = totalCost;
-  }
-  
-  public List<Product> getProducts()
-  {
-    return this.products;
-  }
-  
-  public void setProducts(List<Product> products)
-  {
-    this.products = products;
-  }
-  
-  
-  public String toString()
-  {
-    return 
-      "Order [id=" + this.id + ", paid=" + this.paid + ", amount=" + this.totalCost + ", products=" + this.products + "]";
-  }
+private boolean paid;
+private double totalCost;
+
+	//Here I am telling jackson to use custom deserializer for the
+	// List of products, since it cannot convert JSON arrays to java Collections
+	@JsonProperty("products")
+	@JsonDeserialize(using = ProductDeserializer.class)
+	private List<Product> products;
+	
+	public Order() {}
+	
+	public Order(boolean paid, double totalCost, List<Product> products)
+	{
+	  this.paid = paid;
+	  this.totalCost = totalCost;
+	  this.products = products;
+	}
+	
+	public String getId()
+	{
+	  return this.id;
+	}
+	
+	public void setId(String id)
+	{
+	  this.id = id;
+	}
+	
+	public boolean isPaid()
+	{
+	  return this.paid;
+	}
+	
+	public void setPaid(boolean paid)
+	{
+	  this.paid = paid;
+	}
+	
+	public double getTotalCost()
+	{
+	  return this.totalCost;
+	}
+	
+	public void setTotalCost(double totalCost)
+	{
+	  this.totalCost = totalCost;
+	}
+	
+	public List<Product> getProducts()
+	{
+	  return this.products;
+	}
+	
+	public void setProducts(List<Product> products)
+	{
+	  this.products = products;
+	}
+	
+	
+	public String toString()
+	{
+	  return 
+	    "Order [id=" + this.id + ", paid=" + this.paid + ", amount=" + this.totalCost + ", products=" + this.products + "]";
+	}
 }

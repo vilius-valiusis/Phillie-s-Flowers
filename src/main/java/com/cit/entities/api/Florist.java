@@ -30,51 +30,51 @@ public class Florist
   @JsonProperty("name")
   private String name;
   
-  // Here I am telling jackson to use custom deserializer for the
-  // List of orders, since it cannot convert JSON arrays to java Collections
-  @JsonProperty("orders")
-  @JsonDeserialize(using = OrderDeserializer.class)
-  private List<Order> orders;
-  
-  public Florist() {}
-  public Florist(String name, List<Order> orders)
-  {
-    this.name = name;
-    this.orders = orders;
-  }
-  
-  public String getId()
-  {
-    return this.id;
-  }
-  
-  public void setId(String id)
-  {
-    this.id = id;
-  }
-  
-  public String getName()
-  {
-    return this.name;
-  }
-  
-  public void setName(String name)
-  {
-    this.name = name;
-  }
-  
-  public List<Order> getOrders()
-  {
-    return this.orders;
-  }
-  
-  public void setOrders(List<Order> orders)
-  {
-    this.orders = orders;
-  }
-  
-  public String toString()
-  {
-    return "Florist [id=" + this.id + ", name=" + this.name + ", orders=" + this.orders + "]";
-  }
-}
+	  // Here I am telling jackson to use custom deserializer for the
+	  // List of orders, since it cannot convert JSON arrays to java Collections
+	  @JsonProperty("orders")
+	  @JsonDeserialize(using = OrderDeserializer.class)
+	  private List<Order> orders;
+	  
+	  public Florist() {}
+	  public Florist(String name, List<Order> orders)
+	  {
+	    this.name = name;
+	    this.orders = orders;
+	  }
+	  
+	  public String getId()
+	  {
+	    return this.id;
+	  }
+	  
+	  public void setId(String id)
+	  {
+	    this.id = id;
+	  }
+	  
+	  public String getName()
+	  {
+	    return this.name;
+	  }
+	  
+	  public void setName(String name)
+	  {
+	    this.name = name;
+	  }
+	  
+	  public List<Order> getOrders()
+	  {
+	    return this.orders;
+	  }
+	  
+	  public void setOrders(List<Order> orders)
+	  {
+	    this.orders = orders;
+	  }
+	  
+	  public String toString()
+	  {
+	    return "Florist [id=" + this.id + ", name=" + this.name + ", orders=" + this.orders + "]";
+	  }
+}	

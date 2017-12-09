@@ -17,7 +17,7 @@ public class TestProductRepository {
 	@Autowired
     private ProductRepository productRepository;
 	
-	// Testing product repository for post and get request to embedded mongo instance
+	// Testing product repository for post and get request to embedded MongoDB instance
 	@Test
 	public void testSaveAndGetProduct() throws Exception {
 		Product p = new Product("dasy", "red", Double.valueOf(5.99D), Integer.valueOf(30));

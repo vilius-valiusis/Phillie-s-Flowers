@@ -48,6 +48,7 @@ public class TestRestServiceImpl {
 	@Autowired
 	private ProductRepository productRepository;
 	
+	// Test rest service for getting all the florists
 	@Test
 	public void tesRestServiceGetFlorists() {
 		Florist fl1 = new Florist("David", Arrays.asList(new Order[] {}));
@@ -58,7 +59,7 @@ public class TestRestServiceImpl {
 				assertEquals(f.getName(), fl1.getName());
 		}
 	}
-	
+	// Test rest service for getting all products
 	@Test
 	public void tesRestServiceGetProducts() {
 		Product prod = new Product("chocolate", "dark", 3.15, 5);
