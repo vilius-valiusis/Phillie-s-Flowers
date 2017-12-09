@@ -7,10 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /*This class is the main view controller than handles all .html page views and the variables that need to be displayed using model attribute
  Session attrobutes is used to keep cart items in memeory and displayed on pages until checkout or exiting program*/
@@ -65,8 +63,6 @@ public class ViewController {
 
 		return "/login";
 	}
-
-	
 	
 	@GetMapping("/403")
     public String error403() {

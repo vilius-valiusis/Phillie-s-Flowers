@@ -21,6 +21,10 @@ import com.cit.deserializers.ProductDeserializer;
 @Document 
 public class Order
 {
+	// Ignoring the id, since jackson strugles inserting it in
+	// when converting from JSON back to object.
+	// This is not a problem since we are not posting anything
+	// to the rest API.
   @Id
   @GeneratedValue
   @JsonIgnore
@@ -29,6 +33,8 @@ public class Order
   private boolean paid;
   private double totalCost;
   
+  //Here I am telling jackson to use custom deserializer for the
+ // List of products, since it cannot convert JSON arrays to java Collections
   @JsonProperty("products")
   @JsonDeserialize(using = ProductDeserializer.class)
   private List<Product> products;

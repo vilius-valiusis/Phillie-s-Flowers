@@ -21,17 +21,22 @@ import com.cit.repositories.api.FloristRepository;
 import com.cit.repositories.api.ProductRepository;
 import com.cit.services.api.RestService;
 import com.cit.services.api.RestServiceImpl;
-
+/*
+ * This is used to test the RESTful client implementation.
+ * It requires us first to add data to the tested repositories
+ * that are used by the local server implementation.
+ */
 @RunWith(SpringRunner.class)
 @DataMongoTest
 @RestClientTest(RestService.class)
 public class TestRestServiceImpl {
-	
+	// Created a local bean for the restService as it would not allow me test
+	// repositories with in conjunction with the rest client
 	@TestConfiguration
-    static class EmployeeServiceImplTestContextConfiguration {
+    static class RestServiceImplTestContextConfiguration {
   
         @Bean
-        public RestService employeeService() {
+        public RestService restService() {
             return new RestServiceImpl();
         }
     }

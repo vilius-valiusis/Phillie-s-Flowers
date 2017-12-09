@@ -18,6 +18,10 @@ import com.cit.deserializers.OrderDeserializer;
 @Document 
 public class Florist
 {
+	// Ignoring the id, since jackson strugles inserting it in
+	// when converting from JSON back to object.
+	// This is not a problem since we are not posting anything
+	// to the rest API.
   @Id
   @GeneratedValue
   @JsonIgnore
@@ -26,6 +30,8 @@ public class Florist
   @JsonProperty("name")
   private String name;
   
+  // Here I am telling jackson to use custom deserializer for the
+  // List of orders, since it cannot convert JSON arrays to java Collections
   @JsonProperty("orders")
   @JsonDeserialize(using = OrderDeserializer.class)
   private List<Order> orders;

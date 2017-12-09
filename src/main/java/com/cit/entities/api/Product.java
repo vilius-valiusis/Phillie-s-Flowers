@@ -8,6 +8,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document 
 public class Product
 {
+	// Ignoring the id, since jackson strugles inserting it in
+	// when converting from JSON back to object.
+	// This is not a problem since we are not posting anything
+	// to the rest API.
   @Id
   @GeneratedValue
   @JsonIgnore
