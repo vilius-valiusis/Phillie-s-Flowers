@@ -1,6 +1,6 @@
 package com.cit.repositories;
-//Our Shop repo that extends MongoRepo which has all the commands we need
-//You do not have to include all methods here such as save()
+/*Our Shop repo that extends MongoRepo which has all the commands we need 
+You do not have to include all methods here such as save() as via extension we already have access to them*/
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 import com.cit.entities.Shop;

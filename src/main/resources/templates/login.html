@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Flower Shop - Contact</title>
+<title th:text="#{index.title}"></title>
 <meta http-equiv="Content-Type"
 	content="text/html; charset=windows-1252" />
 <link rel="stylesheet" type="text/css" href="..static/css/style.css"
@@ -21,21 +21,21 @@
 			<div class="left_content">
 				<div class="title">
 					<span class="title_icon"><img src="images/bullet1.gif"
-						alt="" /></span>Login
+						alt="" /></span th:text="#{login.login}">
 				</div>
 				<div class="feat_prod_box_details">
 
 					<div class="contact_form">
-						<div class="form_subtitle">all fields are requierd</div>
+						<div class="form_subtitle" th:text="#{login.fields}"></div>
 
 						<form th:action="@{/login.html}" method="post">
-							<div  th:if="${param.error}"><div class="red">Your details are incorrect</div></div>
+							<div  th:if="${param.error}"><div class="red" th:text="#{login.details}"></div></div>
 							<div class="form_row">
-								<label for="username">Username</label>: <input type="text"
+								<label for="username" th:text="#{login.user}">Username</label>: <input type="text"
 									id="username" name="username" autofocus="autofocus" /> <br />
 							</div>
 							<div class="form_row">
-								<label for="password">Password</label>: <input type="password"
+								<label for="password" th:text="#{login.pass}">Password</label>: <input type="password"
 									id="password" name="password" /> <br />
 							</div>
 							<div class="form_row">
@@ -52,7 +52,7 @@
 
 				<div class="cart">
 					<div class="title">
-						<span class="title_icon"><img src="images/cart.gif" alt="" /></span>My
+						<span class="title_icon"><img src="images/cart.gif" alt="" th:text="#{index.heading.cart}" /></span>My
 						cart
 					</div>
 					<div class="home_cart_content">
@@ -60,18 +60,15 @@
 							| </span><span class="red">Total: </span><span class="red"
 							th:text="${cartTotal}"></span><span class="red">$</span>
 					</div>
-					<a th:href="@{/cart}" class="view_cart">view cart</a>
+					<a th:href="@{/cart}" class="view_cart" th:text="#{index.heading.view}">view cart</a>
 				</div>
 				<div class="title">
 					<span class="title_icon"><img src="images/bullet3.gif"
-						alt="" /></span>About Our Shop
+						alt="" th:text="#{index.heading.about}"/></span>About Our Shop
 				</div>
 				<div class="about">
 					<p>
-						<img src="images/about.gif" alt="" class="right" /> Lorem ipsum
-						dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-						minim veniam, quis nostrud.
+						<img src="images/about.gif" alt="" class="right" th:text="#{index.textfiller}"/> 
 					</p>
 				</div>
 

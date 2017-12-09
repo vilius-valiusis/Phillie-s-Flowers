@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-// This class handles error handling based on failed http requests. A good example is if you get a 403 error the exception will be handled.
-// This will also be used when checking params sent back from a post request i.e if the correct login details were used for backend.
+/*This class handles exceptions based on failed http requests. A good example is if you get a 403 error the exception will be handled.
+This will also be used when checking params sent back from a post request i.e if the correct login details were used for backend.*/
 @Component
 public class MyAccessDeniedHandler implements AccessDeniedHandler {
 

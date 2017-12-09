@@ -1,5 +1,5 @@
 package com.cit.services;
-//Product Service Implementation
+//Bundle Service Implementation. Uses autowired bundle repository to make access data base data.
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,26 +10,26 @@ import com.cit.repositories.BundleRepository;
 public class BundleServiceImpl implements BundleService {
 
 	@Autowired
-	private BundleRepository productRepository;
+	private BundleRepository bundleRepository;
 
 	public BundleServiceImpl(BundleRepository productRepository) {
-		this.productRepository = productRepository;
+		this.bundleRepository = productRepository;
 
 	}
 
 	public List<Bundle> findAll() {
 
-		List<Bundle> productList = productRepository.findAll();
+		List<Bundle> productList = bundleRepository.findAll();
 
 		return productList;
 	}
 
 	public Bundle getById(String id) {
-		return productRepository.getById(id);
+		return bundleRepository.getById(id);
 	}
 
 	public Bundle getByName(String name) {
-		return productRepository.getByName(name);
+		return bundleRepository.getByName(name);
 	}
 
 }

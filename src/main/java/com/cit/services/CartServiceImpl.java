@@ -8,7 +8,9 @@ import com.cit.entities.Bundle;
 @Service
 public class CartServiceImpl implements CartService {
 
-	//These variables are stored as sessions attributes and deleted after checkout
+	/*These variables are stored as sessions attributes and deleted after checkout. Not necessary to add to database if can be kept in
+	session as it is short lived data.*/
+	
 	int cartCount;
 	double cartTotal;
 	List<Bundle> cartList = new ArrayList<Bundle>();

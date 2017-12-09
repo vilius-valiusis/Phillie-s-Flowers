@@ -1,5 +1,5 @@
 package com.cit.services;
-//CartService Interface
+//CartService Interface that has all methods we need to keeping the cart updated.
 import java.util.List;
 
 import com.cit.entities.Bundle;

@@ -18,6 +18,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+/*This data loader adds some dummy data to the embedded mongo db when the application is first run.*/
 @Component
 public class DataLoader
   implements ApplicationRunner

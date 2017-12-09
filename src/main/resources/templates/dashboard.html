@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Flower Shop - Contact</title>
+<title th:text="#{index.title}"></title>
 <meta http-equiv="Content-Type"
 	content="text/html; charset=windows-1252" />
 <link rel="stylesheet" type="text/css" href="..static/css/style.css"
@@ -21,16 +21,16 @@
 			<div class="left_content">
 				<div class="title">
 					<span class="title_icon"><img src="images/bullet1.gif"
-						alt="" /></span>Admin Panel
+						alt="" /></span th:text="#{dash.admin}">
 				</div>
 				<div class="feat_prod_box_details">
 					<div class="contact_form">
-						<div class="form_subtitle">Options</div>
+						<div class="form_subtitle" th:text="#{dash.options}"></div>
 						<div sec:authorize="hasRole('ROLE_ADMIN')">
 							<ul>
-								<li><a th:href="@{/dashboard/products}">Flower Pricing</a></li>
-								<li><a th:href="@{/dashboard/orders}">Previous Orders</a></li>
-								<li><a th:href="@{/dashboard/statistics}">Shop Overview</a></li>
+								<li><a th:href="@{/dashboard/products}" th:text="#{dash.pricing}"></a></li>
+								<li><a th:href="@{/dashboard/orders}" th:text="#{dash.orders}"></a></li>
+								<li><a th:href="@{/dashboard/statistics}" th:text="#{dash.overview}"></a></li>
 							</ul>
 						</div>
 						<div sec:authorize="!hasRole('ROLE_ADMIN')">

@@ -1,5 +1,5 @@
 package com.cit.repositories;
-//Our product repo that extends MongoRepo which has all the commands we need
+//Our Bundle repo that extends MongoRepo which has all the commands we need for accessing our bundles from database
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
